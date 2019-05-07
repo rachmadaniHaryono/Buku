@@ -12,6 +12,7 @@ test-template: &test-template
     - checkout
     - run:
         command: |
+          python setup.py --version
           pip install -e .[tests]
           pip install -r requirements.txt
           python3 -m flake8
