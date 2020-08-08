@@ -1077,7 +1077,8 @@ def test_update_rec_update_all_bookmark(caplog, read_in_retval):
                     print('idx:{};{};message:{};levelname:{}'.format(
                         idx, record, record.getMessage(), record.levelname))
             elif (sys.version_info.major, sys.version_info.minor) == (3, 9):
-                print(vars(caplog.records))
+                from pprint import pprint
+                pprint(caplog.records)
                 raise e
             else:
                 raise e
