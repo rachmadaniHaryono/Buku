@@ -2,7 +2,7 @@
 
 <p align="center">
 <a href="https://github.com/jarun/buku/releases/latest"><img src="https://img.shields.io/github/release/jarun/buku.svg?maxAge=600" alt="Latest release" /></a>
-<a href="https://repology.org/project/buku/versions"><img src="https://repology.org/badge/tiny-repos/buku.svg" alt="Availability"></a>
+<a href="https://repology.org/project/buku/versions"><img src="https://repology.org/badge/tiny-repos/buku.svg?header=repos" alt="Availability"></a>
 <a href="https://pypi.org/project/buku/"><img src="https://img.shields.io/pypi/v/buku.svg?maxAge=600" alt="PyPI" /></a>
 <a href="https://circleci.com/gh/jarun/workflows/buku"><img src="https://img.shields.io/circleci/project/github/jarun/buku.svg" alt="Build Status" /></a>
 <a href="http://buku.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/buku/badge/?version=latest" alt="Docs Status" /></a>
@@ -34,9 +34,10 @@ To get started right away, jump to the [Quickstart](#quickstart) section. We hav
 
 There are several [related projects](#related-projects), including a browser plug-in.
 
-<p align="center">
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RMLTQ76JSXJ4Q"><img src="https://img.shields.io/badge/donate-@PayPal-1eb0fc.svg" alt="Donate via PayPal!" /></a>
-</p>
+
+To get started right away, jump to the [Quickstart](#quickstart) section. `buku` has one of the best documentation around. The man page comes with examples. For internal details, please refer to the [operational notes](https://github.com/jarun/buku/wiki/Operational-notes).
+
+`buku` is a library too! There are several related projects, including a browser plug-in.
 
 ### Table of Contents
 
@@ -74,8 +75,8 @@ There are several [related projects](#related-projects), including a browser plu
 - Portable, merge-able database to sync between systems
 - Import/export bookmarks from/to HTML, Markdown or Orgfile
 - Smart tag management using redirection (>>, >, <<)
-- Multithreaded full DB refresh, manual encryption support
-- Shell completion scripts, man page with handy examples
+- Multi-threaded full DB refresh, manual encryption support
+- Shell completion scripts, man page with examples
 - Privacy-aware (no unconfirmed user data collection)
 
 ### Installation
@@ -302,7 +303,7 @@ PROMPT KEYS:
 
        b -p
 6. For GUI and browser integration (or to sync bookmarks with your favourite bookmark management service) refer to the wiki page on [System integration](https://github.com/jarun/buku/wiki/System-integration).
-7. Handy (bash/zsh) commands to fuzzy search with fzf and open the selection in Firefox:
+7. Quick (bash/zsh) commands to fuzzy search with fzf and open the selection in Firefox:
 
        firefox $(buku -p -f 10 | fzf)
        firefox $(buku -p -f 40 | fzf | cut -f1)
@@ -511,6 +512,7 @@ Missing a feature? There's a rolling [ToDo List](https://github.com/jarun/buku/i
 - [buku-dmenu](https://gitlab.com/benoliver999/buku-dmenu), a simple bash dmenu wrapper
 - [poku](https://github.com/shanedabes/poku), sync between Pocket and buku
 - [Ebuku](https://github.com/flexibeast/ebuku), Emacs interface to buku
+- [diigoku](https://github.com/dppdppd/diigoku), buku importer for Diigo
 
 <a href="http://buku.readthedocs.io/en/stable/?badge=stable"><img src="https://img.shields.io/badge/docs-stable-brightgreen.svg?maxAge=2592000" alt="Stable Docs" /></a>
 
