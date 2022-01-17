@@ -1,0 +1,63 @@
+name: Bug Report
+description: File a bug report
+title: '[Bug]: '
+labels: [bug, triage]
+body:
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this bug report!
+- type: textarea
+  id: what-happened
+  attributes:
+    label: What happened?
+    description: Also tell us, what did you expect to happen?
+    placeholder: Tell us what you see! If we need more information and there is no communication from the bug reporter within 7 days from the date of request, we will close the issue. If you have relevant information, resume discussion any time.
+    value: A bug happened!
+  validations:
+    required: true
+- type: textarea
+  id: version
+  attributes:
+    label: Version
+    description: What version of our software are you running?
+    value: "example: '4.6' or commit hash"
+  validations:
+    required: true
+- type: textarea
+  id: operating_system
+  attributes:
+    label: Operating system
+    description: Which os do you use?
+    value: "example: windows, mac, linux, ubuntu, etc"
+- type: textarea
+  id: python_version
+  attributes:
+    label: Python version
+    description: Which python version?
+    value: "example: 3.8, 3.9"
+- type: textarea
+  id: terminal_and_shell
+  attributes:
+    label: Terminal and shell
+    description: Which terminal and shell do you use?
+    value: "example: alacritty, zsh or gnome-terminal, fish"
+- type: textarea
+  id: locale
+  attributes:
+    label: locale
+    description: "`locale` output, if relevant. (It's a good idea to set your locale to UTF-8. Please refer to [Buku #131](https://github.com/jarun/Buku/issues/30).)"
+    value: "example: LANG=en_US.UTF-8"
+- type: textarea
+  id: logs
+  attributes:
+    label: Relevant log output
+    description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. use the `-g` option
+    render: shell
+- type: checkboxes
+  id: terms
+  attributes:
+    label: check latest version
+    description: can you reproduce the bug on [the latest development version](https://github.com/jarun/Buku#from-source) (The bug you noticed might have already been fixed.)
+    options:
+    - label: 'yes'
