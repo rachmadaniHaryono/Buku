@@ -57,6 +57,7 @@ server_require = [
     "six>=1.10.0",
     "urllib3>=1.25.2",
     "Werkzeug>=0.11.15",
+    "wtforms>=3.0.0a1",
 ]
 
 setup(
