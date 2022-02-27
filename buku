@@ -2,7 +2,7 @@
 #
 # Bookmark management utility
 #
-# Copyright © 2015-2021 Arun Prakash Jana <engineerarun@gmail.com>
+# Copyright © 2015-2022 Arun Prakash Jana <engineerarun@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,8 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with buku.  If not, see <http://www.gnu.org/licenses/>.
 
-from enum import Enum
-from itertools import chain
 import argparse
 import calendar
 import cgi
@@ -36,19 +34,23 @@ import signal
 import sqlite3
 import struct
 import subprocess
-from subprocess import Popen, PIPE, DEVNULL
 import sys
 import tempfile
 import textwrap
 import threading
 import time
-from typing import Any, Dict, Iterable, List, Optional, Tuple
 import unicodedata
 import webbrowser
+from enum import Enum
+from itertools import chain
+from subprocess import DEVNULL, PIPE, Popen
+from typing import Any, Dict, Iterable, List, Optional, Tuple
+
 import urllib3
-from urllib3.exceptions import LocationParseError
-from urllib3.util import parse_url, make_headers, Retry
 from bs4 import BeautifulSoup
+from urllib3.exceptions import LocationParseError
+from urllib3.util import Retry, make_headers, parse_url
+
 # note catch ModuleNotFoundError instead Exception
 # when python3.5 not supported
 try:
@@ -168,10 +170,11 @@ class BukuCrypt:
         """
 
         try:
-            from cryptography.hazmat.backends import default_backend
-            from cryptography.hazmat.primitives.ciphers import (Cipher, modes, algorithms)
             from getpass import getpass
             from hashlib import sha256
+
+            from cryptography.hazmat.backends import default_backend
+            from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
         except ImportError:
             LOGERR('cryptography lib(s) missing')
             sys.exit(1)
@@ -270,10 +273,11 @@ class BukuCrypt:
         """
 
         try:
-            from cryptography.hazmat.backends import default_backend
-            from cryptography.hazmat.primitives.ciphers import (Cipher, modes, algorithms)
             from getpass import getpass
             from hashlib import sha256
+
+            from cryptography.hazmat.backends import default_backend
+            from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
         except ImportError:
             LOGERR('cryptography lib(s) missing')
             sys.exit(1)
@@ -2555,13 +2559,23 @@ class BukuDb:
                 LOGERR(e)
                 return False
 
+            add_parent_folder_as_tag = False
+            use_nested_folder_structure = False
             if not tacit:
-                resp = input('Add parent folder names as tags? (y/n): ')
+                resp = input("""Add bookmark's parent folder as tag?
+y: add single, direct parent folder
+a: add all parent folders of the bookmark
+n: don't add parent folder as tag
+(y/a/[n]): """)
             else:
                 resp = 'y'
 
-            add_parent_folder_as_tag = (resp == 'y')
-            items = import_html(soup, add_parent_folder_as_tag, newtag)
+            if resp in ('y', 'a'):
+                add_parent_folder_as_tag = True
+                if resp == 'a':
+                    use_nested_folder_structure = True
+
+            items = import_html(soup, add_parent_folder_as_tag, newtag, use_nested_folder_structure)
             infp.close()
 
         for item in items:
@@ -2824,7 +2838,7 @@ SYMBOLS:
       #                    tags
 
 Version %s
-Copyright © 2015-2021 %s
+Copyright © 2015-2022 %s
 License: %s
 Webpage: https://github.com/jarun/buku
 ''' % (__version__, __author__, __license__))
@@ -3315,7 +3329,7 @@ def import_firefox_json(json, add_bookmark_folder_as_tag=False, unique_tag=None)
     yield from iterate_children(None, main_entry_list)
 
 
-def import_html(html_soup, add_parent_folder_as_tag, newtag):
+def import_html(html_soup: BeautifulSoup, add_parent_folder_as_tag: bool, newtag: str, use_nested_folder_structure: bool = False):
     """Parse bookmark HTML.
 
     Parameters
@@ -3326,6 +3340,9 @@ def import_html(html_soup, add_parent_folder_as_tag, newtag):
         True if bookmark parent folders should be added as tags else False.
     newtag : str
         A new unique tag to add to imported bookmarks.
+    use_nested_folder_structure: bool
+        True if all bookmark parent folder should be added, not just direct parent else False
+        add_parent_folder_as_tag must be True for this flag to have an effect
 
     Returns
     -------
@@ -3350,19 +3367,36 @@ def import_html(html_soup, add_parent_folder_as_tag, newtag):
         if comment_tag:
             desc = comment_tag.find(text=True, recursive=False)
 
-        # add parent folder as tag
         if add_parent_folder_as_tag:
-            # could be its folder or not
-            possible_folder = tag.find_previous('h3')
-            # get list of tags within that folder
-            tag_list = tag.parent.parent.find_parent('dl')
+            # add parent folder as tag
+            if use_nested_folder_structure:
+                # New method that would generalize for else case too
+                # Stucture of folders
+                # dt
+                #   h3 (folder name)
+                #   dl
+                #       dt
+                #           a (could be h3, and continue recursively)
+                parents = tag.find_parents('dl')
+                for parent in parents:
+                    header = parent.find_previous_sibling('h3')
+                    if header:
+                        if tag.has_attr('tags'):
+                            tag['tags'] += (DELIM + header.text)
+                        else:
+                            tag['tags'] = header.text
+            else:
+                # could be its folder or not
+                possible_folder = tag.find_previous('h3')
+                # get list of tags within that folder
+                tag_list = tag.parent.parent.find_parent('dl')
 
-            if ((possible_folder) and possible_folder.parent in list(tag_list.parents)):
-                # then it's the folder of this bookmark
-                if tag.has_attr('tags'):
-                    tag['tags'] += (DELIM + possible_folder.text)
-                else:
-                    tag['tags'] = possible_folder.text
+                if ((possible_folder) and possible_folder.parent in list(tag_list.parents)):
+                    # then it's the folder of this bookmark
+                    if tag.has_attr('tags'):
+                        tag['tags'] += (DELIM + possible_folder.text)
+                    else:
+                        tag['tags'] = possible_folder.text
 
         # add unique tag if opted
         if newtag:

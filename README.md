@@ -32,7 +32,7 @@ There's no tracking, hidden history, obsolete records, usage analytics or homing
 
 To get started right away, jump to the [Quickstart](#quickstart) section. `buku` has one of the best documentation around. The man page comes with examples. For internal details, please refer to the [operational notes](https://github.com/jarun/buku/wiki/Operational-notes).
 
-`buku` is a library too! There are several [related projects](#related-projects), including a browser plug-in.
+`buku` is a library too! There are several related projects, including a browser plug-in.
 
 ### Table of Contents
 
@@ -490,7 +490,7 @@ You may encounter issues with GUI editors which maintain only one instance by de
 - [Johnathan Jenkins](https://github.com/shaggytwodope)
 - [SZ Lin](https://github.com/szlin)
 
-Copyright © 2015-2021 [Arun Prakash Jana](mailto:engineerarun@gmail.com)
+Copyright © 2015-2022 [Arun Prakash Jana](mailto:engineerarun@gmail.com)
 <br>
 <p><a href="https://gitter.im/jarun/buku"><img src="https://img.shields.io/gitter/room/jarun/buku.svg?maxAge=2592000" alt="gitter chat" /></a></p>
 
@@ -507,6 +507,7 @@ Missing a feature? There's a rolling [ToDo List](https://github.com/jarun/buku/i
 - [buku-dmenu](https://gitlab.com/benoliver999/buku-dmenu), a simple bash dmenu wrapper
 - [poku](https://github.com/shanedabes/poku), sync between Pocket and buku
 - [Ebuku](https://github.com/flexibeast/ebuku), Emacs interface to buku
+- [diigoku](https://github.com/dppdppd/diigoku), buku importer for Diigo
 
 <a href="http://buku.readthedocs.io/en/stable/?badge=stable"><img src="https://img.shields.io/badge/docs-stable-brightgreen.svg?maxAge=2592000" alt="Stable Docs" /></a>
 
