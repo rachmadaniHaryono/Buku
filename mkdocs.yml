@@ -1,0 +1,46 @@
+site_name: Buku
+site_description: Personal mini-web in text.
+# site_url: https://pawamoy.github.io/copier-poetry
+repo_url: https://github.com/jarun/buku/
+repo_name: jarun/buku
+
+nav:
+- Home:
+  - Overview: index.md
+  - Changelog: changelog.md
+  - License: license.md
+- Code Reference: buku.md
+# - Author's website: https://pawamoy.github.io/
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: teal
+    accent: purple
+  features:
+  - navigation.instant
+  - navigation.tabs
+
+markdown_extensions:
+- admonition
+- pymdownx.emoji
+- pymdownx.magiclink
+- pymdownx.snippets:
+    check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed
+- pymdownx.tasklist
+
+plugins:
+- mkdocstrings:
+    handler: python
+    handlers:
+      python:
+        selection:
+          docstring_style: numpy
+        rendering:
+          separate_signature: true
+          show_if_no_docstring: true
+          show_root_heading: true
+          line_length: 139
