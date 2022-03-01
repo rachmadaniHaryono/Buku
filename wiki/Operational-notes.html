@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PR comment" href="PR-guidelines.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="List-tags-usage-count-prefixed.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>General</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/wiki/Operational-notes.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="general">
+<h1>General<a class="headerlink" href="#general" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>The database file is stored in:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">$XDG_DATA_HOME/buku/bookmarks.db</span></code>, if <code class="docutils literal notranslate"><span class="pre">XDG_DATA_HOME</span></code> is defined (first preference) or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/buku/bookmarks.db</span></code>, if <code class="docutils literal notranslate"><span class="pre">HOME</span></code> is defined (second preference) or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%APPDATA%\buku\bookmarks.db</span></code> on Windows or</p></li>
+<li><p>the current directory.</p></li>
+</ul>
+</li>
+<li><p>If the URL contains characters like <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or brackets, they may be interpreted specially by the shell. To prevent this, place the URL within single or double quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>/<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>).</p></li>
+<li><p>URLs are unique in DB. The same URL cannot be added twice.</p></li>
+<li><p>Bookmarks with immutable titles are listed with <code class="docutils literal notranslate"><span class="pre">(L)</span></code> after the title.</p></li>
+</ul>
+</section>
+<section id="tags">
+<h1>Tags<a class="headerlink" href="#tags" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>) is the tag delimiter in DB. A tag cannot have comma(s) in it. Tags are filtered (for unique tags) and sorted. Tags are stored in lower case and can be replaced, appended or deleted.</p></li>
+<li><p>Page keywords having a word to comma ratio &gt; 3 are appended to description rather than tags (refer to <a class="reference external" href="https://github.com/jarun/Buku/issues/300">issue #300</a>).</p></li>
+<li><p>Parent folder (and subfolder) names are converted to all-lowercase tags during bookmarks HTML import.</p></li>
+<li><p>Releases prior to v2.7 support both uppercase and lowercase characters in tags. From v2.7 on, all tags are stored in lowercase. An undocumented option <code class="docutils literal notranslate"><span class="pre">--fixtags</span></code> is introduced to modify the older tags. It also fixes another issue where the same tag appears multiple times in the tagset of a record. Run <code class="docutils literal notranslate"><span class="pre">buku</span> <span class="pre">--fixtags</span></code> once.</p></li>
+<li><p>Tags can be edited from the prompt very easily using <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> (append), <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (overwrite) and <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> (remove) symbols. The left-hand side of the operands denotes the indices and ranges of tags to apply (as listed by <code class="docutils literal notranslate"><span class="pre">--stag</span></code> or key <code class="docutils literal notranslate"><span class="pre">t</span></code> at prompt) and the right-hand side denotes the actual DB indices and ranges of the bookmarks to apply the change to.</p></li>
+</ul>
+</section>
+<section id="update">
+<h1>Update<a class="headerlink" href="#update" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">--title</span></code>, <code class="docutils literal notranslate"><span class="pre">--tag</span></code> or <code class="docutils literal notranslate"><span class="pre">--comment</span></code> is passed without an argument, clear the corresponding field from DB.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">--url</span></code> is passed (and <code class="docutils literal notranslate"><span class="pre">--title</span></code> is omitted), update the title from web using the URL. Description is updated (if <code class="docutils literal notranslate"><span class="pre">--comment</span></code> is omitted). Tags remain untouched.</p></li>
+<li><p>If indices are passed without any other options (<code class="docutils literal notranslate"><span class="pre">--url</span></code>, <code class="docutils literal notranslate"><span class="pre">--title</span></code>, <code class="docutils literal notranslate"><span class="pre">--tag</span></code>, <code class="docutils literal notranslate"><span class="pre">--comment</span></code> and <code class="docutils literal notranslate"><span class="pre">--immutable</span></code>), read the URLs from DB and update titles, description and append tags from web. Bookmarks marked immutable are skipped.</p></li>
+<li><p>Can update bookmarks matching a search, when combined with any of the search options and no arguments to update are passed.</p></li>
+</ul>
+</section>
+<section id="delete">
+<h1>Delete<a class="headerlink" href="#delete" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>When a record is deleted, the last record is moved to the index.</p></li>
+<li><p>Delete doesn’t work with range and indices provided together as arguments. It’s an intentional decision to avoid extra sorting, in-range checks and to keep the auto-DB compaction functionality intact. On the same lines, indices are deleted in descending order.</p></li>
+<li><p>Can delete bookmarks matching a search, when combined with any of the search options and no arguments to delete are passed.</p></li>
+</ul>
+</section>
+<section id="search">
+<h1>Search<a class="headerlink" href="#search" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Case insensitive.</p></li>
+<li><p>Matches words in URL, title and tags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sany</span></code> : match any of the keywords in URL, title or tags. Default search option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sall</span></code> : match all the keywords in URL, title or tags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--deep</span></code> : match <em>substrings</em> (<code class="docutils literal notranslate"><span class="pre">match</span></code> matches <code class="docutils literal notranslate"><span class="pre">rematched</span></code>) in URL, title and tags.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sreg</span></code> : match a regular expression (ignores <code class="docutils literal notranslate"><span class="pre">--deep</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--stag</span></code> : search bookmarks by tags, or list all tags alphabetically with usage count (if no arguments). Delimit the list of tags in the query with <code class="docutils literal notranslate"><span class="pre">,</span></code> to search for bookmarks that match ANY of the listed tags. Delimit tags with <code class="docutils literal notranslate"><span class="pre">+</span></code> to search for bookmarks that match ALL of the listed tags. Note that <code class="docutils literal notranslate"><span class="pre">,</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> cannot be used together in the same search. Exclude bookmarks matching certain tags from the results by using <code class="docutils literal notranslate"><span class="pre">-</span></code> followed by the tags. Note that the <code class="docutils literal notranslate"><span class="pre">-</span></code> operator and the <code class="docutils literal notranslate"><span class="pre">+</span></code> delimiter must be space separated: <code class="docutils literal notranslate"><span class="pre">-</span></code> instead of <code class="docutils literal notranslate"><span class="pre">-</span></code> and <code class="docutils literal notranslate"><span class="pre">+</span></code> instead of <code class="docutils literal notranslate"><span class="pre">+</span></code>. This is to distinguish them from hyphenated tags (e.g., <code class="docutils literal notranslate"><span class="pre">some-tag-name</span></code>) and tags with <code class="docutils literal notranslate"><span class="pre">+</span></code>s (e.g., <code class="docutils literal notranslate"><span class="pre">some+tag+name</span></code>).</p></li>
+<li><p>Search for keywords along with tag filtering is possible. Two searches are issued (one for keywords and another for tags) and the intersection of the 2 sets is returned as the resultset.</p></li>
+<li><p>Search results are indexed incrementally. This index is different from actual database index of a bookmark record which is shown within <code class="docutils literal notranslate"><span class="pre">[]</span></code> after the title.</p></li>
+<li><p>Order of search results</p>
+<ul>
+<li><p>Results for <em>any</em> keyword matches are ordered by the number of keyword matches — results matching more keywords (<em>match score</em>) will appear earlier in the list. Results having the same number of matches will be ranked by their record DB index. This applies to search queries that are looking to match <em>any</em> of a given set of keywords (using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option or by delimiting keywords with <code class="docutils literal notranslate"><span class="pre">,</span></code> when using <code class="docutils literal notranslate"><span class="pre">--stag</span></code>).</p></li>
+<li><p>Queries that look to match <em>all</em> keywords will return records ordered by their DB index, since each record will have the same <em>match score</em>.</p></li>
+<li><p>Regardless of the search logic used, if only one keyword is searched, results will be ordered by DB index, since all matching records will have the same <em>match score</em>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="import">
+<h1>Import<a class="headerlink" href="#import" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Auto-import looks in the default installation path and default user profile.</p></li>
+<li><p>URLs starting with <code class="docutils literal notranslate"><span class="pre">place:</span></code>, <code class="docutils literal notranslate"><span class="pre">file://</span></code>, <code class="docutils literal notranslate"><span class="pre">chrome://</span></code>, <code class="docutils literal notranslate"><span class="pre">apt:</span></code> and <code class="docutils literal notranslate"><span class="pre">about:</span></code> are ignored during import.</p></li>
+<li><p>Folder names are automatically imported as tags if <code class="docutils literal notranslate"><span class="pre">--tacit</span></code> is used.</p></li>
+<li><p>Tags are merged even if bookmark URL exists when <code class="docutils literal notranslate"><span class="pre">--tacit</span></code> is used.</p></li>
+</ul>
+</section>
+<section id="encryption">
+<h1>Encryption<a class="headerlink" href="#encryption" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Optional and manual. AES-256 algorithm is used. To use encryption, the database file should be unlocked (<code class="docutils literal notranslate"><span class="pre">-k</span></code>) before using <code class="docutils literal notranslate"><span class="pre">buku</span></code> and locked (<code class="docutils literal notranslate"><span class="pre">-l</span></code>) afterwards. Between these 2 operations, the database file lies unencrypted on the disk, and <strong>not</strong> in memory. Also, note that the database file is <em>unencrypted on creation</em>.</p></li>
+</ul>
+</section>
+<section id="editor">
+<h1>Editor<a class="headerlink" href="#editor" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>A single bookmark can be edited before adding. The editor can be set using the environment variable <code class="docutils literal notranslate"><span class="pre">EDITOR</span></code> or by explicitly specifying the editor. The latter takes preference. If <code class="docutils literal notranslate"><span class="pre">-a</span></code> is used along with <code class="docutils literal notranslate"><span class="pre">-w</span></code>, the details are populated in the editor template.</p></li>
+<li><p>In case of edit and update (a single bookmark), the existing record details are fetched from DB and populated in the editor template. The environment variable EDITOR must be set Note that <code class="docutils literal notranslate"><span class="pre">-u</span></code> works independently of <code class="docutils literal notranslate"><span class="pre">-w</span></code>.</p></li>
+<li><p>All lines beginning with “#” will be stripped. Then line 1 will be treated as the URL, line 2 will be the title, line 3 will be comma separated tags, and the rest of the lines will be parsed as descriptions.</p></li>
+</ul>
+</section>
+<section id="proxy">
+<h1>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Environment variable <code class="docutils literal notranslate"><span class="pre">https_proxy</span></code>, if defined, is used to tunnel data for both HTTP and HTTPS connections. The supported format is:</p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http[s]://[username:password@]proxyhost:proxyport/
+</pre></div>
+</div>
+</section>
+<section id="alternative-db-file">
+<h1>Alternative DB file<a class="headerlink" href="#alternative-db-file" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>The option <code class="docutils literal notranslate"><span class="pre">--db</span></code> (to specify an alternative database file location) is app-only. Manual usage is prone to issues arising from human error. If you still want to use this option, it may be a good idea to have your own aliases.</p></li>
+<li><p>Note that this option is useful if you want to store the db file in cloud synced location. Another mechanism could be to have the db file synced and create a symlink to it at the default location.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="List-tags-usage-count-prefixed.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PR-guidelines.html" class="btn btn-neutral float-right" title="PR comment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>buku module &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="bukuserver package" href="bukuserver.html" />
+    <link rel="prev" title="Buku 3.8 or newer with readme.md" href="wiki/Upload-to-pypi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>buku module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/buku.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-buku">
+<span id="buku-module"></span><h1>buku module<a class="headerlink" href="#module-buku" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="buku.BukuCrypt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">BukuCrypt</span></span><a class="reference internal" href="_modules/buku.html#BukuCrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuCrypt" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle encryption and decryption of
+the database file. Functionally a separate entity.</p>
+<p>Involves late imports in the static functions but it
+saves ~100ms each time. Given that encrypt/decrypt are
+not done automatically and any one should be called at
+a time, this doesn’t seem to be an outrageous approach.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuCrypt.BLOCKSIZE">
+<span class="sig-name descname"><span class="pre">BLOCKSIZE</span></span><a class="headerlink" href="#buku.BukuCrypt.BLOCKSIZE" title="Permalink to this definition"></a></dt>
+<dd><p>64 KB blocks</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuCrypt.CHUNKSIZE">
+<span class="sig-name descname"><span class="pre">CHUNKSIZE</span></span><a class="headerlink" href="#buku.BukuCrypt.CHUNKSIZE" title="Permalink to this definition"></a></dt>
+<dd><p>Read/write 512 KB chunks</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">BLOCKSIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">65536</span></em><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">CHUNKSIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">524288</span></em><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuCrypt.SALT_SIZE">
+<span class="sig-name descname"><span class="pre">SALT_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">32</span></em><a class="headerlink" href="#buku.BukuCrypt.SALT_SIZE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuCrypt.decrypt_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decrypt_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuCrypt.decrypt_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuCrypt.decrypt_file" title="Permalink to this definition"></a></dt>
+<dd><p>Decrypt the bookmarks database file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterations</strong> (<em>int</em>) – Number of iterations for key generation.</p></li>
+<li><p><strong>dbfile</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom database file path (including filename).
+The ‘.enc’ suffix must be omitted.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuCrypt.encrypt_file">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">encrypt_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterations</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuCrypt.encrypt_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuCrypt.encrypt_file" title="Permalink to this definition"></a></dt>
+<dd><p>Encrypt the bookmarks database file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iterations</strong> (<em>int</em>) – Number of iterations for key generation.</p></li>
+<li><p><strong>dbfile</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom database file path (including filename).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuCrypt.get_filehash">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_filehash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuCrypt.get_filehash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuCrypt.get_filehash" title="Permalink to this definition"></a></dt>
+<dd><p>Get the SHA256 hash of a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filepath</strong> (<em>str</em>) – Path to the file.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hash</strong> – Hash digest of file.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buku.BukuDb">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">BukuDb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_filter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chatty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstracts all database operations.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuDb.conn">
+<span class="sig-name descname"><span class="pre">conn</span></span><a class="headerlink" href="#buku.BukuDb.conn" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>sqlite database connection.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuDb.cur">
+<span class="sig-name descname"><span class="pre">cur</span></span><a class="headerlink" href="#buku.BukuDb.cur" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>sqlite database cursor.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuDb.json">
+<span class="sig-name descname"><span class="pre">json</span></span><a class="headerlink" href="#buku.BukuDb.json" title="Permalink to this definition"></a></dt>
+<dd><p>Empty string if results should be printed in JSON format to stdout.
+Nonempty string if results should be printed in JSON format to file. The string has to be a valid path.
+None if the results should be printed as human-readable plaintext.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuDb.field_filter">
+<span class="sig-name descname"><span class="pre">field_filter</span></span><a class="headerlink" href="#buku.BukuDb.field_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Indicates format for displaying bookmarks. Default is 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.BukuDb.chatty">
+<span class="sig-name descname"><span class="pre">chatty</span></span><a class="headerlink" href="#buku.BukuDb.chatty" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the verbosity of the APIs. Default is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.add_rec">
+<span class="sig-name descname"><span class="pre">add_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">immutable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fetch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.add_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.add_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Add a new bookmark.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – URL to bookmark.</p></li>
+<li><p><strong>title_in</strong> (<em>str</em><em>, </em><em>optional</em>) – Title to add manually. Default is None.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em><em>, </em><em>optional</em>) – Comma-separated tags to add manually.
+Must start and end with comma. Default is None.</p></li>
+<li><p><strong>desc</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of the bookmark. Default is None.</p></li>
+<li><p><strong>immutable</strong> (<em>int</em><em>, </em><em>optional</em>) – Indicates whether to disable title fetch from web.
+Default is 0.</p></li>
+<li><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p></li>
+<li><p><strong>fetch</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fetch page from web and parse for data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DB index of new bookmark on success, -1 on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.append_tag_at_index">
+<span class="sig-name descname"><span class="pre">append_tag_at_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.append_tag_at_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.append_tag_at_index" title="Permalink to this definition"></a></dt>
+<dd><p>Append tags to bookmark tagset at index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of the record. 0 indicates all records.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em>) – Comma-separated tags to add manually.</p></li>
+<li><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.auto_import_from_browser">
+<span class="sig-name descname"><span class="pre">auto_import_from_browser</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.auto_import_from_browser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.auto_import_from_browser" title="Permalink to this definition"></a></dt>
+<dd><p>Import bookmarks from a browser default database file.</p>
+<p>Supports Firefox and Google Chrome.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.browse_by_index">
+<span class="sig-name descname"><span class="pre">browse_by_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.browse_by_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.browse_by_index" title="Permalink to this definition"></a></dt>
+<dd><p>Open URL at index or range of indices in browser.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index to browse. 0 opens a random bookmark.</p></li>
+<li><p><strong>low</strong> (<em>int</em>) – Actual lower index of range.</p></li>
+<li><p><strong>high</strong> (<em>int</em>) – Higher index of range.</p></li>
+<li><p><strong>is_range</strong> (<em>bool</em>) – A range is passed using low and high arguments.
+If True, index is ignored. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.browse_cached_url">
+<span class="sig-name descname"><span class="pre">browse_cached_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.browse_cached_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.browse_cached_url" title="Permalink to this definition"></a></dt>
+<dd><p>Open URL at index or URL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg</strong> (<em>str</em>) – Index or url to browse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Wayback Machine URL, None if not cached</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.cleardb">
+<span class="sig-name descname"><span class="pre">cleardb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.cleardb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.cleardb" title="Permalink to this definition"></a></dt>
+<dd><p>Drops the bookmark table if it exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.close" title="Permalink to this definition"></a></dt>
+<dd><p>Close a DB connection.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.close_quit">
+<span class="sig-name descname"><span class="pre">close_quit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exitval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.close_quit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.close_quit" title="Permalink to this definition"></a></dt>
+<dd><p>Close a DB connection and exit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>exitval</strong> (<em>int</em><em>, </em><em>optional</em>) – Program exit value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.compactdb">
+<span class="sig-name descname"><span class="pre">compactdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.compactdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.compactdb" title="Permalink to this definition"></a></dt>
+<dd><p>When an entry at index is deleted, move the
+last entry in DB to index, if index is lesser.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of deleted entry.</p></li>
+<li><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.delete_rec">
+<span class="sig-name descname"><span class="pre">delete_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.delete_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.delete_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Delete a single record or remove the table if index is 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – DB index of deleted entry.</p></li>
+<li><p><strong>low</strong> (<em>int</em><em>, </em><em>optional</em>) – Actual lower index of range.</p></li>
+<li><p><strong>high</strong> (<em>int</em><em>, </em><em>optional</em>) – Actual higher index of range.</p></li>
+<li><p><strong>is_range</strong> (<em>bool</em><em>, </em><em>optional</em>) – A range is passed using low and high arguments.
+An index is ignored if is_range is True.</p></li>
+<li><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>TypeError</strong> – If any of index, low, or high variable is not integer.</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">buku</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># single record database</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Index 1 deleted</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Delete record with default range.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">is_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
+<span class="go">Remove ALL bookmarks? (y/n): y</span>
+<span class="go">All bookmarks deleted</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Running the function without any parameter will raise TypeError.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="c">...</span>
+<span class="gr">TypeError</span>: <span class="n">index, low, or high variable is not integer</span>
+</pre></div>
+</div>
+<p>Negative number on <cite>high</cite> and <cite>low</cite> paramaters when is_range is True
+will log error and return False</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Remove the table</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  
+<span class="go">Remove ALL bookmarks? (y/n): y</span>
+<span class="go">All bookmarks deleted</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.delete_rec_all">
+<span class="sig-name descname"><span class="pre">delete_rec_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.delete_rec_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.delete_rec_all" title="Permalink to this definition"></a></dt>
+<dd><p>Removes all records in the Bookmarks table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.delete_resultset">
+<span class="sig-name descname"><span class="pre">delete_resultset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.delete_resultset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.delete_resultset" title="Permalink to this definition"></a></dt>
+<dd><p>Delete search results in descending order of DB index.</p>
+<p>Indices are expected to be unique and in ascending order.</p>
+<p class="rubric">Notes</p>
+<p>This API forces a delayed commit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>results</strong> (<em>list of tuples</em>) – List of results to delete from DB.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.delete_tag_at_index">
+<span class="sig-name descname"><span class="pre">delete_tag_at_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_commit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chatty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.delete_tag_at_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.delete_tag_at_index" title="Permalink to this definition"></a></dt>
+<dd><p>Delete tags from bookmark tagset at index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of bookmark record. 0 indicates all records.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em>) – Comma-separated tags to delete manually.</p></li>
+<li><p><strong>delay_commit</strong> (<em>bool</em><em>, </em><em>optional</em>) – True if record should not be committed to the DB,
+leaving commit responsibility to caller. Default is False.</p></li>
+<li><p><strong>chatty</strong> (<em>bool</em><em>, </em><em>optional</em>) – Skip confirmation when set to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.edit_update_rec">
+<span class="sig-name descname"><span class="pre">edit_update_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">immutable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.edit_update_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.edit_update_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Edit in editor and update a record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of the record.
+Last record, if index is -1.</p></li>
+<li><p><strong>immutable</strong> (<em>int</em><em>, </em><em>optional</em>) – Diable title fetch from web if 1. Default is -1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if updated, else False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.exclude_results_from_search">
+<span class="sig-name descname"><span class="pre">exclude_results_from_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">without</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.exclude_results_from_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.exclude_results_from_search" title="Permalink to this definition"></a></dt>
+<dd><p>Excludes records that match keyword search using without parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>search_results</strong> (<em>list</em>) – List of search results</p></li>
+<li><p><strong>without</strong> (<em>list of str</em>) – Keywords to search.</p></li>
+<li><p><strong>deep</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to search for matching substrings.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of search results, or None if no matches.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.exportdb">
+<span class="sig-name descname"><span class="pre">exportdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resultset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.exportdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.exportdb" title="Permalink to this definition"></a></dt>
+<dd><p>Export DB bookmarks to file.
+Exports full DB, if resultset is None</p>
+<p>If destination file name ends with ‘.db’, bookmarks are
+exported to a buku database file.
+If destination file name ends with ‘.md’, bookmarks are
+exported to a Markdown file.
+If destination file name ends with ‘.org’ bookmarks are
+exported to a org file.
+Otherwise, bookmarks are exported to a Firefox bookmarks.html
+formatted file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to export destination file.</p></li>
+<li><p><strong>resultset</strong> (<em>list of tuples</em>) – List of results to export.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.fixtags">
+<span class="sig-name descname"><span class="pre">fixtags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.fixtags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.fixtags" title="Permalink to this definition"></a></dt>
+<dd><p>Undocumented API to fix tags set in earlier versions.</p>
+<p>Functionalities:</p>
+<ol class="arabic simple">
+<li><p>Remove duplicate tags</p></li>
+<li><p>Sort tags</p></li>
+<li><p>Use lower case to store tags</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_default_dbdir">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_default_dbdir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.get_default_dbdir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_default_dbdir" title="Permalink to this definition"></a></dt>
+<dd><p>Determine the directory path where dbfile will be stored.</p>
+<p>If the platform is Windows, use %APPDATA%
+else if $XDG_DATA_HOME is defined, use it
+else if $HOME exists, use it
+else use the current directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Path to database file.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_max_id">
+<span class="sig-name descname"><span class="pre">get_max_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.get_max_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_max_id" title="Permalink to this definition"></a></dt>
+<dd><p>Fetch the ID of the last record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ID of the record if any record exists, else -1.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_rec_all">
+<span class="sig-name descname"><span class="pre">get_rec_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.get_rec_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_rec_all" title="Permalink to this definition"></a></dt>
+<dd><p>Get all the bookmarks in the database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A list of tuples representing bookmark records.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_rec_by_id">
+<span class="sig-name descname"><span class="pre">get_rec_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.get_rec_by_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_rec_by_id" title="Permalink to this definition"></a></dt>
+<dd><p>Get a bookmark from database by its ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – DB index of bookmark record.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bookmark data, or None if index is not found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_rec_id">
+<span class="sig-name descname"><span class="pre">get_rec_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.get_rec_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_rec_id" title="Permalink to this definition"></a></dt>
+<dd><p>Check if URL already exists in DB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – A URL to search for in the DB.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DB index, or -1 if URL not found in DB.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_tag_all">
+<span class="sig-name descname"><span class="pre">get_tag_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.get_tag_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_tag_all" title="Permalink to this definition"></a></dt>
+<dd><p>Get list of tags in DB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(list of unique tags sorted alphabetically,</dt><dd><p>dictionary of {tag: usage_count}).</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.get_tagstr_from_taglist">
+<span class="sig-name descname"><span class="pre">get_tagstr_from_taglist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taglist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.get_tagstr_from_taglist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.get_tagstr_from_taglist" title="Permalink to this definition"></a></dt>
+<dd><p>Get a string of delimiter-separated (and enclosed) string
+of tags from a dictionary of tags by matching ids.</p>
+<p>The inputs are the outputs from BukuDb.get_tag_all().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id_list</strong> (<em>list</em>) – List of ids.</p></li>
+<li><p><strong>taglist</strong> (<em>list</em>) – List of tags.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Delimiter separated and enclosed list of tags.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.importdb">
+<span class="sig-name descname"><span class="pre">importdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tacit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.importdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.importdb" title="Permalink to this definition"></a></dt>
+<dd><p>Import bookmarks from a HTML or a Markdown file.</p>
+<p>Supports Firefox, Google Chrome, and IE exported HTML bookmarks.
+Supports Markdown files with extension ‘.md, .org’.
+Supports importing bookmarks from another buku database file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to file to import.</p></li>
+<li><p><strong>tacit</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, no questions asked and folder names are automatically
+imported as tags from bookmarks HTML.
+If True, automatic timestamp tag is NOT added.
+Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.initdb">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbfile</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chatty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">sqlite3.Connection</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">sqlite3.Cursor</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.initdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.initdb" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the database connection.</p>
+<p>Create DB file and/or bookmarks table if they don’t exist.
+Alert on encryption options on first execution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dbfile</strong> (<em>str</em><em>, </em><em>optional</em>) – Custom database file path (including filename).</p></li>
+<li><p><strong>chatty</strong> (<em>bool</em>) – If True, shows informative message on DB creation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(connection, cursor).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.list_using_id">
+<span class="sig-name descname"><span class="pre">list_using_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.list_using_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.list_using_id" title="Permalink to this definition"></a></dt>
+<dd><p>List entries in the DB using the specified id list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ids</strong> (<em>list of ids in string form</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.load_chrome_database">
+<span class="sig-name descname"><span class="pre">load_chrome_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_parent_folder_as_tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.load_chrome_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.load_chrome_database" title="Permalink to this definition"></a></dt>
+<dd><p>Open Chrome Bookmarks JSON file and import data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path to Google Chrome bookmarks file.</p></li>
+<li><p><strong>unique_tag</strong> (<em>str</em>) – Timestamp tag in YYYYMonDD format.</p></li>
+<li><p><strong>add_parent_folder_as_tag</strong> (<em>bool</em>) – True if bookmark parent folders should be added as tags else False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.load_firefox_database">
+<span class="sig-name descname"><span class="pre">load_firefox_database</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_parent_folder_as_tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.load_firefox_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.load_firefox_database" title="Permalink to this definition"></a></dt>
+<dd><p>Connect to Firefox sqlite db and import bookmarks into BukuDb.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path to Firefox bookmarks sqlite database.</p></li>
+<li><p><strong>unique_tag</strong> (<em>str</em>) – Timestamp tag in YYYYMonDD format.</p></li>
+<li><p><strong>add_parent_folder_as_tag</strong> (<em>bool</em>) – True if bookmark parent folders should be added as tags else False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.mergedb">
+<span class="sig-name descname"><span class="pre">mergedb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.mergedb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.mergedb" title="Permalink to this definition"></a></dt>
+<dd><p>Merge bookmarks from another buku database file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path to DB file to merge.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.print_rec">
+<span class="sig-name descname"><span class="pre">print_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.print_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.print_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Print bookmark details at index or all bookmarks if index is 0.</p>
+<p>A negative index behaves like tail, if title is blank show “Untitled”.</p>
+<p>Empty database check will run when <cite>index</cite> &lt; 0 and <cite>is_range</cite> is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em>) – DB index of record to print. 0 prints all records.</p></li>
+<li><p><strong>low</strong> (<em>int</em><em>, </em><em>optional</em>) – Actual lower index of range.</p></li>
+<li><p><strong>high</strong> (<em>int</em><em>, </em><em>optional</em>) – Actual higher index of range.</p></li>
+<li><p><strong>is_range</strong> (<em>bool</em><em>, </em><em>optional</em>) – A range is passed using low and high arguments.
+An index is ignored if is_range is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">buku</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># empty database</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span><span class="o">.</span><span class="n">print_rec</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Print negative index on empty database will log error and return False</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span><span class="o">.</span><span class="n">print_rec</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>print non empty database with default argument.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">NamedTemporaryFile</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># single record database</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">sdb</span><span class="o">.</span><span class="n">print_rec</span><span class="p">()</span>
+<span class="go">1. Example Domain</span>
+<span class="go">   &gt; https://example.com</span>
+</pre></div>
+</div>
+<p>Negative number on <cite>high</cite> and <cite>low</cite> paramaters when is_range is True
+will log error and return False</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdb</span><span class="o">.</span><span class="n">print_rec</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edb</span><span class="o">.</span><span class="n">print_rec</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.refreshdb">
+<span class="sig-name descname"><span class="pre">refreshdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.refreshdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.refreshdb" title="Permalink to this definition"></a></dt>
+<dd><p>Refresh ALL records in the database.</p>
+<p>Fetch title for each bookmark from the web and update the records.
+Doesn’t update the record if fetched title is empty.</p>
+<p class="rubric">Notes</p>
+<p>This API doesn’t change DB index, URL or tags of a bookmark.
+This API is verbose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of record to update. 0 indicates all records.</p></li>
+<li><p><strong>threads</strong> (<em>int</em>) – Number of threads to use to refresh full DB. Default is 4.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.replace_tag">
+<span class="sig-name descname"><span class="pre">replace_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.replace_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.replace_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Replace original tag by new tags in all records.</p>
+<p>Remove original tag if new tag is empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orig</strong> (<em>str</em>) – Original tag.</p></li>
+<li><p><strong>new</strong> (<em>list</em>) – Replacement tags.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.search_by_tag">
+<span class="sig-name descname"><span class="pre">search_by_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.search_by_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.search_by_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Search bookmarks for entries with given tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tags</strong> (<em>str</em>) – String of tags to search for.
+Retrieves entries matching ANY tag if tags are
+delimited with ‘,’.
+Retrieves entries matching ALL tags if tags are
+delimited with ‘+’.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of search results, or None if no matches.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.search_keywords_and_filter_by_tags">
+<span class="sig-name descname"><span class="pre">search_keywords_and_filter_by_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.search_keywords_and_filter_by_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.search_keywords_and_filter_by_tags" title="Permalink to this definition"></a></dt>
+<dd><p>Search bookmarks for entries with keywords and specified
+criteria while filtering out entries with matching tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>list of str</em>) – Keywords to search.</p></li>
+<li><p><strong>all_keywords</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to return records matching ALL keywords.
+False to return records matching ANY keyword.</p></li>
+<li><p><strong>deep</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to search for matching substrings.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em><em>, </em><em>optional</em>) – Match a regular expression if True.</p></li>
+<li><p><strong>stag</strong> (<em>str</em>) – String of tags to search for.
+Retrieves entries matching ANY tag if tags are
+delimited with ‘,’.
+Retrieves entries matching ALL tags if tags are
+delimited with ‘+’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of search results, or None if no matches.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.searchdb">
+<span class="sig-name descname"><span class="pre">searchdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_keywords</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.searchdb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.searchdb" title="Permalink to this definition"></a></dt>
+<dd><p>Search DB for entries where tags, URL, or title fields match keywords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>list of str</em>) – Keywords to search.</p></li>
+<li><p><strong>all_keywords</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to return records matching ALL keywords.
+False (default value) to return records matching ANY keyword.</p></li>
+<li><p><strong>deep</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to search for matching substrings. Default is False.</p></li>
+<li><p><strong>regex</strong> (<em>bool</em><em>, </em><em>optional</em>) – Match a regular expression if True. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of search results, or None if no matches.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.set_tag">
+<span class="sig-name descname"><span class="pre">set_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmdstr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">taglist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.set_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.set_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Append, overwrite, remove tags using the symbols &gt;&gt;, &gt; and &lt;&lt; respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmdstr</strong> (<em>str</em>) – Command pattern.</p></li>
+<li><p><strong>taglist</strong> (<em>list</em>) – List of tags.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Number of indices updated on success, -1 on failure, -2 on no symbol found.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.suggest_similar_tag">
+<span class="sig-name descname"><span class="pre">suggest_similar_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tagstr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.suggest_similar_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.suggest_similar_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Show list of tags those go together in DB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tagstr</strong> (<em>str</em>) – Original tag string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>DELIM separated string of tags.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.tnyfy_url">
+<span class="sig-name descname"><span class="pre">tnyfy_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shorten</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.tnyfy_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.tnyfy_url" title="Permalink to this definition"></a></dt>
+<dd><p>Shorten a URL using Google URL shortener.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>if URL is provided</em><em>)</em>) – DB index of the bookmark with the URL to shorten. Default is 0.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>if index is provided</em><em>)</em>) – URL to shorten.</p></li>
+<li><p><strong>shorten</strong> (<em>bool</em><em>, </em><em>optional</em>) – True to shorten, False to expand. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Shortened url on success, None on failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.traverse_bm_folder">
+<span class="sig-name descname"><span class="pre">traverse_bm_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sublist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_tag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_parent_folder_as_tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#BukuDb.traverse_bm_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.traverse_bm_folder" title="Permalink to this definition"></a></dt>
+<dd><p>Traverse bookmark folders recursively and find bookmarks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sublist</strong> (<em>list</em>) – List of child entries in bookmark folder.</p></li>
+<li><p><strong>unique_tag</strong> (<em>str</em>) – Timestamp tag in YYYYMonDD format.</p></li>
+<li><p><strong>folder_name</strong> (<em>str</em>) – Name of the parent folder.</p></li>
+<li><p><strong>add_parent_folder_as_tag</strong> (<em>bool</em>) – True if bookmark parent folders should be added as tags else False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Bookmark record data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.BukuDb.update_rec">
+<span class="sig-name descname"><span class="pre">update_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">immutable</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threads</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/buku.html#BukuDb.update_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.BukuDb.update_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Update an existing record at index.</p>
+<p>Update all records if index is 0 and url is not specified.
+URL is an exception because URLs are unique in DB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – DB index of record. 0 indicates all records.</p></li>
+<li><p><strong>url</strong> (<em>str</em><em>, </em><em>optional</em>) – Bookmark address.</p></li>
+<li><p><strong>title_in</strong> (<em>str</em><em>, </em><em>optional</em>) – Title to add manually.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em><em>, </em><em>optional</em>) – Comma-separated tags to add manually. Must start and end with comma.
+Prefix with ‘+,’ to append to current tags.
+Prefix with ‘-,’ to delete from current tags.</p></li>
+<li><p><strong>desc</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of bookmark.</p></li>
+<li><p><strong>immutable</strong> (<em>int</em><em>, </em><em>optional</em>) – Disable title fetch from web if 1. Default is -1.</p></li>
+<li><p><strong>threads</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of threads to use to refresh full DB. Default is 4.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False on Failure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buku.ConverterResult">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">ConverterResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#buku.ConverterResult" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.ConverterResult.count">
+<span class="sig-name descname"><span class="pre">count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#buku.ConverterResult.count" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.ConverterResult.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#buku.ConverterResult.data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="buku.ExtendedArgumentParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">ExtendedArgumentParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">usage=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epilog=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents=[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter_class=&lt;class</span> <span class="pre">'argparse.HelpFormatter'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_chars='-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromfile_prefix_chars=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argument_default=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conflict_handler='error'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_help=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_abbrev=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit_on_error=True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#ExtendedArgumentParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.ExtendedArgumentParser" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">argparse.ArgumentParser</span></code></p>
+<p>Extend classic argument parser.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.ExtendedArgumentParser.is_colorstr">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_colorstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#ExtendedArgumentParser.is_colorstr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.ExtendedArgumentParser.is_colorstr" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a string is a valid color string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arg</strong> (<em>str</em>) – Color string to validate.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Same color string that was passed as an argument.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ArgumentTypeError</strong> – If the arg is not a valid color string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.ExtendedArgumentParser.print_help">
+<span class="sig-name descname"><span class="pre">print_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#ExtendedArgumentParser.print_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.ExtendedArgumentParser.print_help" title="Permalink to this definition"></a></dt>
+<dd><p>Print help prompt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>file</em><em>, </em><em>optional</em>) – File to write program info to. Default is sys.stdout.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.ExtendedArgumentParser.program_info">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">program_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#ExtendedArgumentParser.program_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.ExtendedArgumentParser.program_info" title="Permalink to this definition"></a></dt>
+<dd><p>Print program info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>file</em><em>, </em><em>optional</em>) – File to write program info to. Default is sys.stdout.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="buku.ExtendedArgumentParser.prompt_help">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">prompt_help</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file=&lt;_io.TextIOWrapper</span> <span class="pre">name='&lt;stdout&gt;'</span> <span class="pre">mode='w'</span> <span class="pre">encoding='utf-8'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#ExtendedArgumentParser.prompt_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.ExtendedArgumentParser.prompt_help" title="Permalink to this definition"></a></dt>
+<dd><p>Print prompt help.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> (<em>file</em><em>, </em><em>optional</em>) – File to write program info to. Default is sys.stdout.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.browse">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">browse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#browse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.browse" title="Permalink to this definition"></a></dt>
+<dd><p>Duplicate stdin, stdout and open URL in default browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Duplicates stdin and stdout in order to
+suppress showing errors on the terminal.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – URL to open in browser.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.suppress_browser_output">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">suppress_browser_output</span></span><a class="headerlink" href="#buku.suppress_browser_output" title="Permalink to this definition"></a></dt>
+<dd><p>True if a text based browser is detected.
+Must be initialized (as applicable) to use the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="buku.override_text_browser">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">override_text_browser</span></span><a class="headerlink" href="#buku.override_text_browser" title="Permalink to this definition"></a></dt>
+<dd><p>If True, tries to open links in a GUI based browser.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.check_stdout_encoding">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">check_stdout_encoding</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#check_stdout_encoding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.check_stdout_encoding" title="Permalink to this definition"></a></dt>
+<dd><p>Make sure stdout encoding is utf-8.</p>
+<p>If not, print error message and instructions, then exit with
+status 1.</p>
+<p>This function is a no-op on win32 because encoding on win32 is
+messy, and let’s just hope for the best. /s</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.check_upstream_release">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">check_upstream_release</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#check_upstream_release"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.check_upstream_release" title="Permalink to this definition"></a></dt>
+<dd><p>Check and report the latest upstream release version.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.convert_bookmark_set">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">convert_bookmark_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bookmark_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#buku.ConverterResult" title="buku.ConverterResult"><span class="pre">buku.ConverterResult</span></a></span></span><a class="reference internal" href="_modules/buku.html#convert_bookmark_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.convert_bookmark_set" title="Permalink to this definition"></a></dt>
+<dd><p>Convert list of bookmark set into multiple data format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bookmark_set</strong> (<em>bookmark set</em>) – </p></li>
+<li><p><strong>type</strong> (<em>export</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>converted data and count of converted bookmark set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.convert_tags_to_org_mode_tags">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">convert_tags_to_org_mode_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/buku.html#convert_tags_to_org_mode_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.convert_tags_to_org_mode_tags" title="Permalink to this definition"></a></dt>
+<dd><p>convert buku tags to org-mode compatible tags.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.copy_to_clipboard">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">copy_to_clipboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#copy_to_clipboard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.copy_to_clipboard" title="Permalink to this definition"></a></dt>
+<dd><p>Copy content to clipboard</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Content to be copied to clipboard</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.delim_wrap">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">delim_wrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#delim_wrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.delim_wrap" title="Permalink to this definition"></a></dt>
+<dd><p>Returns token string wrapped in delimiters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>token</strong> (<em>str</em>) – String item to wrap with DELIM.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Token string wrapped by DELIM.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.disable_sigint_handler">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">disable_sigint_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#disable_sigint_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.disable_sigint_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Disable signint handler.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.edit_at_prompt">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">edit_at_prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nav</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suggest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#edit_at_prompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.edit_at_prompt" title="Permalink to this definition"></a></dt>
+<dd><p>Edit and add or update a bookmark.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>BukuDb instance</em>) – A valid instance of BukuDb class.</p></li>
+<li><p><strong>nav</strong> (<em>str</em>) – Navigation command argument passed at prompt by user.</p></li>
+<li><p><strong>suggest</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, suggest similar tags on new bookmark addition.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.edit_rec">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">edit_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#edit_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.edit_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Edit a bookmark record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>editor</strong> (<em>str</em>) – Editor to open.</p></li>
+<li><p><strong>URL</strong> (<em>str</em>) – URL to open.</p></li>
+<li><p><strong>title_in</strong> (<em>str</em>) – Title to add manually.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em>) – Comma-separated tags to add manually.</p></li>
+<li><p><strong>desc</strong> (<em>str</em>) – Bookmark description.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parsed results from parse_temp_file_content().</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.enable_sigint_handler">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">enable_sigint_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#enable_sigint_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.enable_sigint_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Enable sigint handler.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.format_json">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">format_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resultset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_record</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#format_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.format_json" title="Permalink to this definition"></a></dt>
+<dd><p>Return results in JSON format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resultset</strong> (<em>list</em>) – Search results from DB query.</p></li>
+<li><p><strong>single_record</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, indicates only one record. Default is False.</p></li>
+<li><p><strong>field_filter</strong> (<em>int</em><em>, </em><em>optional</em>) – Indicates format for displaying bookmarks. Default is 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Record(s) in JSON format.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>json</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.gen_auto_tag">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">gen_auto_tag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#gen_auto_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.gen_auto_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a tag in Year-Month-Date format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>New tag as YYYYMonDD.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.gen_headers">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">gen_headers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#gen_headers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.gen_headers" title="Permalink to this definition"></a></dt>
+<dd><p>Generate headers for network connection.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.get_PoolManager">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">get_PoolManager</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#get_PoolManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.get_PoolManager" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a pool manager with proxy support, if applicable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ProxyManager if https_proxy is defined, PoolManager otherwise.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ProxyManager or PoolManager</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.get_data_from_page">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">get_data_from_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#get_data_from_page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.get_data_from_page" title="Permalink to this definition"></a></dt>
+<dd><p>Detect HTTP response encoding and invoke parser with decoded data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>resp</strong> (<em>HTTP response</em>) – Response from GET request.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(title, description, keywords).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.get_firefox_profile_name">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">get_firefox_profile_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#get_firefox_profile_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.get_firefox_profile_name" title="Permalink to this definition"></a></dt>
+<dd><p>List folder and detect default Firefox profile name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>profile</strong> – Firefox profile name.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.get_system_editor">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">get_system_editor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#get_system_editor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.get_system_editor" title="Permalink to this definition"></a></dt>
+<dd><p>Returns default system editor is $EDITOR is set.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.import_firefox_json">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">import_firefox_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_bookmark_folder_as_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#import_firefox_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.import_firefox_json" title="Permalink to this definition"></a></dt>
+<dd><p>Open Firefox JSON export file and import data.
+Ignore ‘SmartBookmark’  and ‘Separator’  entries.</p>
+<p>Needed/used fields out of the JSON schema of the bookmarks:</p>
+<p>title              : the name/title of the entry
+tags               : ‘,’ separated tags for the bookmark entry
+typeCode           : 1 - uri, 2 - subfolder, 3 - separator
+annos/{name,value} : following annotation entries are used</p>
+<blockquote>
+<div><p>name : Places/SmartBookmark            : identifies smart folder, ignored
+name : bookmarkPropereties/description :  detailed bookmark entry description</p>
+</div></blockquote>
+<p>children           : for subfolders, recurse into the child entries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – Path to Firefox JSON bookmarks file.</p></li>
+<li><p><strong>unique_tag</strong> (<em>str</em>) – Timestamp tag in YYYYMonDD format.</p></li>
+<li><p><strong>add_bookmark_folder_as_tag</strong> (<em>bool</em>) – True if bookmark parent folder should be added as tags else False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.import_html">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">import_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html_soup</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bs4.BeautifulSoup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_parent_folder_as_tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_nested_folder_structure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#import_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.import_html" title="Permalink to this definition"></a></dt>
+<dd><p>Parse bookmark HTML.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>html_soup</strong> (<em>BeautifulSoup object</em>) – BeautifulSoup representation of bookmark HTML.</p></li>
+<li><p><strong>add_parent_folder_as_tag</strong> (<em>bool</em>) – True if bookmark parent folders should be added as tags else False.</p></li>
+<li><p><strong>newtag</strong> (<em>str</em>) – A new unique tag to add to imported bookmarks.</p></li>
+<li><p><strong>use_nested_folder_structure</strong> (<em>bool</em>) – True if all bookmark parent folder should be added, not just direct parent else False
+add_parent_folder_as_tag must be True for this flag to have an effect</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parsed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.import_md">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">import_md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#import_md"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.import_md" title="Permalink to this definition"></a></dt>
+<dd><p>Parse bookmark Markdown file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to Markdown file.</p></li>
+<li><p><strong>newtag</strong> (<em>str</em><em>, </em><em>optional</em>) – New tag for bookmarks in Markdown file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parsed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.import_org">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">import_org</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newtag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#import_org"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.import_org" title="Permalink to this definition"></a></dt>
+<dd><p>Parse bookmark org file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – Path to org file.</p></li>
+<li><p><strong>newtag</strong> (<em>str</em><em>, </em><em>optional</em>) – New tag for bookmarks in org file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Parsed result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_bad_url">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_bad_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_bad_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_bad_url" title="Permalink to this definition"></a></dt>
+<dd><p>Check if URL is malformed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This API is not bulletproof but works in most cases.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – URL to scan.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if URL is malformed, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_editor_valid">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_editor_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_editor_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_editor_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the editor string is valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>editor</strong> (<em>str</em>) – Editor string.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if string is valid, else False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_ignored_mime">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_ignored_mime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_ignored_mime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_ignored_mime" title="Permalink to this definition"></a></dt>
+<dd><p>Check if URL links to ignored MIME.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only a ‘HEAD’ request is made for these URLs.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – URL to scan.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if URL links to ignored MIME, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_int">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_int" title="Permalink to this definition"></a></dt>
+<dd><p>Check if a string is a digit.</p>
+<dl class="simple">
+<dt>string<span class="classifier">str</span></dt><dd><p>Input string to check.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True on success, False on exception.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_nongeneric_url">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_nongeneric_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_nongeneric_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_nongeneric_url" title="Permalink to this definition"></a></dt>
+<dd><p>Returns True for URLs which are non-http and non-generic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – URL to scan.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if URL is a non-generic URL, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.is_unusual_tag">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">is_unusual_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tagstr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#is_unusual_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.is_unusual_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Identify unusual tags with word to comma ratio &gt; 3.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tagstr</strong> (<em>str</em>) – tag string to check.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if valid tag else False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.main">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.main" title="Permalink to this definition"></a></dt>
+<dd><p>Main.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.monkeypatch_textwrap_for_cjk">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">monkeypatch_textwrap_for_cjk</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#monkeypatch_textwrap_for_cjk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.monkeypatch_textwrap_for_cjk" title="Permalink to this definition"></a></dt>
+<dd><p>Monkeypatch textwrap for CJK wide characters.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.network_handler">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">network_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">http_head</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#network_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.network_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Handle server connection and redirections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – URL to fetch.</p></li>
+<li><p><strong>http_head</strong> (<em>bool</em>) – If True, send only HTTP HEAD request. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(title, description, tags, recognized mime, bad url).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.parse_decoded_page">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">parse_decoded_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#parse_decoded_page"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.parse_decoded_page" title="Permalink to this definition"></a></dt>
+<dd><p>Fetch title, description and keywords from decoded HTML page.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>page</strong> (<em>str</em>) – Decoded HTML page.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(title, description, keywords).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.parse_tags">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">parse_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keywords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#parse_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.parse_tags" title="Permalink to this definition"></a></dt>
+<dd><p>Format and get tag string from tokens.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>keywords</strong> (<em>list</em><em>, </em><em>optional</em>) – List of tags to parse. Default is empty list.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>str</em> – Comma-delimited string of tags.</p></li>
+<li><p><strong>DELIM</strong> (<em>str</em>) – If no keywords, returns the delimiter.</p></li>
+<li><p><em>None</em> – If keywords is None.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.parse_temp_file_content">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">parse_temp_file_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#parse_temp_file_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.parse_temp_file_content" title="Permalink to this definition"></a></dt>
+<dd><p>Parse and return temporary file content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – String of content.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p>(url, title, tags, comments)</p>
+<p>url: URL to open
+title: string title to add manually
+tags: string of comma-separated tags to add manually
+comments: string description</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.piped_input">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">piped_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#piped_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.piped_input" title="Permalink to this definition"></a></dt>
+<dd><p>Handle piped input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pipeargs</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.prep_tag_search">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">prep_tag_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/buku.html#prep_tag_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.prep_tag_search" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare list of tags to search and determine search operator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tags</strong> (<em>str</em>) – String list of tags to search.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(list of formatted tags to search,</dt><dd><p>a string indicating query search operator (either OR or AND),
+a regex string of tags or None if ‘ - ‘ delimiter not in tags).</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.print_json_safe">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">print_json_safe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resultset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single_record</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#print_json_safe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.print_json_safe" title="Permalink to this definition"></a></dt>
+<dd><p>Prints json results and handles IOError</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resultset</strong> (<em>list</em>) – Search results from DB query.</p></li>
+<li><p><strong>single_record</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, indicates only one record. Default is False.</p></li>
+<li><p><strong>field_filter</strong> (<em>int</em><em>, </em><em>optional</em>) – Indicates format for displaying bookmarks. Default is 0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.print_rec_with_filter">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">print_rec_with_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">records</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#print_rec_with_filter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.print_rec_with_filter" title="Permalink to this definition"></a></dt>
+<dd><p>Print records filtered by field.</p>
+<p>User determines which fields in the records to display
+by using the –format option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>records</strong> (<em>list</em><em> or </em><em>sqlite3.Cursor object</em>) – List of bookmark records to print</p></li>
+<li><p><strong>field_filter</strong> (<em>int</em>) – Integer indicating which fields to print.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.print_single_rec">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">print_single_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#print_single_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.print_single_rec" title="Permalink to this definition"></a></dt>
+<dd><p>Print a single DB record.</p>
+<p>Handles both search results and individual record.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>tuple</em>) – Tuple representing bookmark record data.</p></li>
+<li><p><strong>idx</strong> (<em>int</em><em>, </em><em>optional</em>) – Search result index. If 0, print with DB index.
+Default is 0.</p></li>
+<li><p><strong>columns</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of columns to wrap comments to.
+Default is 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.prompt">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">prompt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noninteractive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listtags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suggest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#prompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.prompt" title="Permalink to this definition"></a></dt>
+<dd><p>Show each matching result from a search and prompt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>BukuDb instance</em>) – A valid instance of BukuDb class.</p></li>
+<li><p><strong>results</strong> (<em>list</em>) – Search result set from a DB query.</p></li>
+<li><p><strong>noninteractive</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, does not seek user input. Shows all results. Default is False.</p></li>
+<li><p><strong>deep</strong> (<em>bool</em><em>, </em><em>optional</em>) – Use deep search. Default is False.</p></li>
+<li><p><strong>listtags</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, list all tags.</p></li>
+<li><p><strong>suggest</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, suggest similar tags on edit and add bookmark.</p></li>
+<li><p><strong>num</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of results to show per page. Default is 10.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.read_in">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">read_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#read_in"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.read_in" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper to handle input() with interrupts disabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – String to pass to to input().</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.regexp">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">regexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#regexp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.regexp" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a regular expression search.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expr</strong> (<em>regex</em>) – Regular expression to search for.</p></li>
+<li><p><strong>item</strong> (<em>str</em>) – Item on which to perform regex search.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if result of search is not None, else False.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.setcolors">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">setcolors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#setcolors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.setcolors" title="Permalink to this definition"></a></dt>
+<dd><p>Get colors from user and separate into ‘result’ list for use in arg.colors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>str</em>) – Color string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.setup_logger">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">setup_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LOGGER</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#setup_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.setup_logger" title="Permalink to this definition"></a></dt>
+<dd><p>Setup logger with color.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>LOGGER</strong> (<em>logger object</em>) – Logger to colorize.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.show_taglist">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">show_taglist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#show_taglist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.show_taglist" title="Permalink to this definition"></a></dt>
+<dd><p>Additional prompt to show unique tag list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>BukuDb instance</em>) – A valid instance of BukuDb class.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.sigint_handler">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">sigint_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#sigint_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.sigint_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Custom SIGINT handler.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Neither signum nor frame are used in
+this custom handler. However, they are
+required parameters for signal handlers.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signum</strong> (<em>int</em>) – Signal number.</p></li>
+<li><p><strong>frame</strong> (<em>frame object</em><em> or </em><em>None.</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.to_temp_file_content">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">to_temp_file_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#to_temp_file_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.to_temp_file_content" title="Permalink to this definition"></a></dt>
+<dd><p>Generate temporary file content string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> (<em>str</em>) – URL to open.</p></li>
+<li><p><strong>title_in</strong> (<em>str</em>) – Title to add manually.</p></li>
+<li><p><strong>tags_in</strong> (<em>str</em>) – Comma-separated tags to add manually.</p></li>
+<li><p><strong>desc</strong> (<em>str</em>) – String description.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Lines as newline separated string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AttributeError</strong> – when tags_in is None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.unwrap">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">unwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#unwrap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.unwrap" title="Permalink to this definition"></a></dt>
+<dd><p>Unwrap text.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.walk">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">walk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#walk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.walk" title="Permalink to this definition"></a></dt>
+<dd><p>Recursively iterate over JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>root</strong> (<em>JSON element</em>) – Base node of the JSON data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="buku.write_string_to_file">
+<span class="sig-prename descclassname"><span class="pre">buku.</span></span><span class="sig-name descname"><span class="pre">write_string_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buku.html#write_string_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buku.write_string_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Writes given content to file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content</strong> (<em>str</em>) – </p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wiki/Upload-to-pypi.html" class="btn btn-neutral float-left" title="Buku 3.8 or newer with readme.md" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bukuserver.html" class="btn btn-neutral float-right" title="bukuserver package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

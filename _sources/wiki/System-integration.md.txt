@@ -1,0 +1,106 @@
+![buku](http://i.imgur.com/8Y6PTPw.png)
+
+### ToC
+
+- [Bookmark from anywhere](#bookmark-from-anywhere)
+- [Auto-import browser bookmarks](#auto-import-browser-bookmarks)
+- [Export bookmarks to browser](#export-bookmarks-to-browser)
+- [Sync bookmarks with a web service](#sync-bookmarks-with-a-web-service)
+- [Set the preferred editor](#set-the-preferred-editor)
+- [Sync database across systems](#sync-database-across-systems)
+
+`buku` can be integrated in a GUI environment with simple tweaks.
+
+#### Bookmark from anywhere
+
+With support for piped input, it's possible to add bookmarks to `buku` using keyboard shortcuts on Linux and OS X. CLIPBOARD (plus PRIMARY on Linux) text selections can be added directly this way. The additional utility required is `xsel` (on Linux) or `pbpaste` (on OS X).
+
+The following steps explore the procedure on Linux with Ubuntu as the reference platform.
+
+1. To install `xsel` on Ubuntu, run:
+
+        $ sudo apt install xsel
+2. Create a new script `bukuadd` with the following content:
+
+        #!/bin/bash
+
+        xsel | buku -a
+
+      `-a` is the option to add a bookmark.
+3. Make the script executable:
+
+        $ chmod +x bukuadd
+4. Copy it somewhere in your `PATH`.
+5. Add a new keyboard shortcut to run the script. I use `<Alt-b>`.
+
+##### Test drive
+
+Copy or select a URL with mouse and press the keyboard shortcut to add it to the `buku` database. The addition might take a few seconds to reflect depending on your internet speed and the time `buku` needs to fetch the title from the URL. To avoid title fetch from the web, add the `--title` option to the script.
+
+To verify that the bookmark has indeed been added, run:
+
+    $ buku -p -1
+and check the entry.
+
+##### Tips
+
+- To add the last visited URL in Firefox to `buku`, use the following script:
+
+        #!/bin/bash
+
+        sqlite3 $HOME/.mozilla/firefox/*.default/places.sqlite "select url from moz_places where last_visit_date=(select max(last_visit_date) from moz_places)" | buku -a
+- If you want to tag these bookmarks, look them up later using:
+
+        $ buku -S blank
+  Use option `-u` to tag these bookmarks.
+
+#### Auto-import browser bookmarks
+
+To automatically import bookmarks from Firefox and Google Chrome, run:
+
+    $ buku --ai
+Alternatively, `buku` can also import html bookmark exports from Firefox and Google Chrome.
+
+#### Export bookmarks to browser
+
+`buku` can export bookmarks in HTML format recognized by Firefox, Google Chrome and Internet Explorer.
+
+To export all bookmarks, run:
+
+    $ buku --export path_to_bookmarks.html
+To export specific tags, run:
+
+    $ buku --export path_to_bookmarks.html --tag tag 1, tag 2
+Once exported, import the html file in your browser. For Firefox, the workflow is:
+
+ <kbd>Ctrl-Shift-O</kbd> -> _Import and Backup_ -> _Import Bookmarks from HTML..._
+
+### Sync bookmarks with a web service
+
+Many web-based bookmark management services understand Mozilla's standard bookmarks HTML format. You can sync your `buku` database with these services using the `--import` and `--export` options above.
+
+[Pinku](https://github.com/mosegontar/pinku) is a utility to import bookmarks from Pinboard to Buku.
+
+If the service you are using doesn't understand it, probably send a request to the technical team to support the format.
+
+### Set the preferred editor
+
+Set the environment variable `EDITOR` to your preferred editor to add/edit bookmarks using the `--write/-w` option:
+
+    export EDITOR=vim
+or
+
+    export EDITOR=mousepad
+
+Some GUI editors may need to be opened in blocking mode. See issue [#210](https://github.com/jarun/Buku/issues/210) and examples.
+
+### Sync database across systems
+
+`buku` has the capability to import records from another `buku` database file. However, users with a cloud service client installed on multiple systems can keep the database synced across these systems automatically. To achieve this, store the actual database file in a synced directory and create a symbolic link to it in the location where the database file would exist otherwise. For example, if you are using Dropbox then you can do the following:
+
+    mv ~/.local/share/buku/bookmarks.db ~/Dropbox/Public/bookmarks.db
+    ln -s ~/Dropbox/Public/bookmarks.db ~/.local/share/buku/bookmarks.db
+
+If you prefer to sync manually from time to time instead of creating a symlink:
+
+    buku -e ~/Dropbox/Public/bookmarks.db

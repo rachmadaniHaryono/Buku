@@ -1,0 +1,20 @@
+We use [tox](http://readthedocs.org/docs/tox/) to manage virtualenvs and run tests.
+
+        $ pip install tox
+
+Run all of the tests with:
+
+        $ tox
+
+Run all of the tests in parallel with the `-p` option:
+
+        $ tox -p=all
+
+If you running into this error check you buku setting.
+
+```
+>       self.assertEqual(dbdir_local_expected, BukuDb.get_default_dbdir())
+E       AssertionError: '/home/user/.local/share/buku' != '/home/user/projects/buku'
+E       - /home/user/.local/share/buku
+E       + /home/user/projects/buku
+```

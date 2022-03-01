@@ -1,0 +1,77 @@
+#### General
+
+- The database file is stored in:
+  - `$XDG_DATA_HOME/buku/bookmarks.db`, if `XDG_DATA_HOME` is defined (first preference) or
+  - `$HOME/.local/share/buku/bookmarks.db`, if `HOME` is defined (second preference) or
+  - `%APPDATA%\buku\bookmarks.db` on Windows or
+  - the current directory.
+- If the URL contains characters like `;`, `&` or brackets, they may be interpreted specially by the shell. To prevent this, place the URL within single or double quotes (`'`/`"`).
+- URLs are unique in DB. The same URL cannot be added twice.
+- Bookmarks with immutable titles are listed with `(L)` after the title.
+
+#### Tags
+
+- Comma (`,`) is the tag delimiter in DB. A tag cannot have comma(s) in it. Tags are filtered (for unique tags) and sorted. Tags are stored in lower case and can be replaced, appended or deleted.
+- Page keywords having a word to comma ratio > 3 are appended to description rather than tags (refer to [issue #300](https://github.com/jarun/Buku/issues/300)).
+- Parent folder (and subfolder) names are converted to all-lowercase tags during bookmarks HTML import.
+- Releases prior to v2.7 support both uppercase and lowercase characters in tags. From v2.7 on, all tags are stored in lowercase. An undocumented option `--fixtags` is introduced to modify the older tags. It also fixes another issue where the same tag appears multiple times in the tagset of a record. Run `buku --fixtags` once.
+- Tags can be edited from the prompt very easily using `>>` (append), `>` (overwrite) and `<<` (remove) symbols. The left-hand side of the operands denotes the indices and ranges of tags to apply (as listed by `--stag` or key `t` at prompt) and the right-hand side denotes the actual DB indices and ranges of the bookmarks to apply the change to.
+
+#### Update
+
+- If `--title`, `--tag` or `--comment` is passed without an argument, clear the corresponding field from DB.
+- If `--url` is passed (and `--title` is omitted), update the title from web using the URL. Description is updated (if `--comment` is omitted). Tags remain untouched.
+- If indices are passed without any other options (`--url`, `--title`, `--tag`, `--comment` and `--immutable`), read the URLs from DB and update titles, description and append tags from web. Bookmarks marked immutable are skipped.
+- Can update bookmarks matching a search, when combined with any of the search options and no arguments to update are passed.
+
+#### Delete
+
+- When a record is deleted, the last record is moved to the index.
+- Delete doesn't work with range and indices provided together as arguments. It's an intentional decision to avoid extra sorting, in-range checks and to keep the auto-DB compaction functionality intact. On the same lines, indices are deleted in descending order.
+- Can delete bookmarks matching a search, when combined with any of the search options and no arguments to delete are passed.
+
+#### Search
+
+- Case insensitive.
+- Matches words in URL, title and tags.
+- `--sany` : match any of the keywords in URL, title or tags. Default search option.
+- `--sall` : match all the keywords in URL, title or tags.
+- `--deep` : match *substrings* (`match` matches `rematched`) in URL, title and tags.
+- `--sreg` : match a regular expression (ignores `--deep`).
+- `--stag` : search bookmarks by tags, or list all tags alphabetically with usage count (if no arguments). Delimit the list of tags in the query with `,` to search for bookmarks that match ANY of the listed tags. Delimit tags with `+` to search for bookmarks that match ALL of the listed tags. Note that `,` and `+` cannot be used together in the same search. Exclude bookmarks matching certain tags from the results by using ` - ` followed by the tags. Note that the ` - ` operator and the ` + ` delimiter must be space separated: ` - ` instead of `-` and ` + ` instead of `+`. This is to distinguish them from hyphenated tags (e.g., `some-tag-name`) and tags with `+`s (e.g., `some+tag+name`).
+- Search for keywords along with tag filtering is possible. Two searches are issued (one for keywords and another for tags) and the intersection of the 2 sets is returned as the resultset.
+- Search results are indexed incrementally. This index is different from actual database index of a bookmark record which is shown within `[]` after the title.
+- Order of search results
+  - Results for _any_ keyword matches are ordered by the number of keyword matches — results matching more keywords (*match score*) will appear earlier in the list. Results having the same number of matches will be ranked by their record DB index. This applies to search queries that are looking to match _any_ of a given set of keywords (using the `-s` option or by delimiting keywords with `,` when using `--stag`).
+  - Queries that look to match _all_ keywords will return records ordered by their DB index, since each record will have the same *match score*.
+  - Regardless of the search logic used, if only one keyword is searched, results will be ordered by DB index, since all matching records will have the same *match score*.
+
+#### Import
+
+- Auto-import looks in the default installation path and default user profile.
+- URLs starting with `place:`, `file://`, `chrome://`, `apt:` and `about:` are ignored during import.
+- Folder names are automatically imported as tags if `--tacit` is used.
+- Tags are merged even if bookmark URL exists when `--tacit` is used.
+
+#### Encryption
+
+- Optional and manual. AES-256 algorithm is used. To use encryption, the database file should be unlocked (`-k`) before using `buku` and locked (`-l`) afterwards. Between these 2 operations, the database file lies unencrypted on the disk, and **not** in memory. Also, note that the database file is *unencrypted on creation*.
+
+#### Editor
+
+- A single bookmark can be edited before adding. The editor can be set using the environment variable `EDITOR` or by explicitly specifying the editor. The latter takes preference. If `-a` is used along with `-w`, the details are populated in the editor template.
+- In case of edit and update (a single bookmark), the existing record details are fetched from DB and populated in the editor template. The environment variable EDITOR must be set Note that `-u` works independently of `-w`.
+- All lines beginning with "#" will be stripped. Then line 1 will be treated as the URL, line 2 will be the title, line 3 will be comma separated tags, and the rest of the lines will be parsed as descriptions.
+
+#### Proxy
+
+- Environment variable `https_proxy`, if defined, is used to tunnel data for both HTTP and HTTPS connections. The supported format is:
+
+```text
+http[s]://[username:password@]proxyhost:proxyport/
+```
+
+#### Alternative DB file
+
+- The option `--db` (to specify an alternative database file location) is app-only. Manual usage is prone to issues arising from human error. If you still want to use this option, it may be a good idea to have your own aliases.
+- Note that this option is useful if you want to store the db file in cloud synced location. Another mechanism could be to have the db file synced and create a symlink to it at the default location.

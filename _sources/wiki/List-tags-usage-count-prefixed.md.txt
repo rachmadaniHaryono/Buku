@@ -1,0 +1,7 @@
+To list tags with the tag usage count at the the beginning, run:
+
+    buku --np -t | awk 'gsub( /\(|\)$/, "" ) { $1 = $NF; $NF = ""; print }'
+
+or, to sort by usage count:
+
+    buku --np -t | awk 'gsub( /\(|\)$/, "" ) { $1 = $NF; $NF = ""; print }' | sort -nr

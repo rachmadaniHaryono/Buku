@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bukuserver.forms &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>bukuserver.forms</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for bukuserver.forms</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Forms module.&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=too-few-public-methods, missing-docstring</span>
+<span class="kn">import</span> <span class="nn">wtforms</span>
+<span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">FlaskForm</span>
+
+
+<div class="viewcode-block" id="SearchBookmarksForm"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.forms.SearchBookmarksForm">[docs]</a><span class="k">class</span> <span class="nc">SearchBookmarksForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">FieldList</span><span class="p">(</span><span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Keywords&#39;</span><span class="p">),</span> <span class="n">min_entries</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">all_keywords</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="s1">&#39;Match all keywords&#39;</span><span class="p">)</span>
+    <span class="n">deep</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="s1">&#39;Deep search&#39;</span><span class="p">)</span>
+    <span class="n">regex</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="s1">&#39;Regex&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="HomeForm"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.forms.HomeForm">[docs]</a><span class="k">class</span> <span class="nc">HomeForm</span><span class="p">(</span><span class="n">SearchBookmarksForm</span><span class="p">):</span>
+    <span class="n">keyword</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">(</span><span class="s1">&#39;Keyword&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="BookmarkForm"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.forms.BookmarkForm">[docs]</a><span class="k">class</span> <span class="nc">BookmarkForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">wtforms</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">DataRequired</span><span class="p">()])</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">()</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">()</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">TextAreaField</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

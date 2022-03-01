@@ -1,0 +1,55 @@
+# Install Buku on [Termux](https://termux.com/)
+## Main buku package installation
+First, you must have around 1GB of storage space for build dependencies. 
+Next steps will set you up with working Python environment, the package manager `pip`, and several build dependencies.
+You may receive various build errors ([1](https://github.com/jarun/Buku/issues/395)) if you don't install these manually.
+
+```shell
+pgk upgrade
+# Install Python, pip and needed packages
+pkg install python libcrypt libffi clang openssl rust
+```
+For rust cryptography, before buku package installation, you need to set system type otherwise you might get build [errors](https://github.com/pyca/cryptography/issues/6679).
+
+```shell
+rustc --print target-list
+# Choose architecture and set env variable
+export CARGO_BUILD_TARGET=aarch64-linux-android
+
+```
+
+Finally, run the following, which should install any remaining dependencies together with Buku itself:
+
+```shell
+pip install buku
+```
+
+## Start bukuserver
+You can use bukuserver locally on termux with these simple commands
+```shell
+pip intsall "buku[server]"
+# Start server
+bukuserver run --host 127.0.0.1 --port 5001
+```
+You can open your browser, and navigate to site with url `127.0.0.1:5001`.
+
+## Cleanup some build dependencies (~600MB)
+```shell
+pkg uninstall clang rust llvm
+```
+## Backup and import buku database
+Bind termux storage to android, in termux storage/shared -> /storage/emulated/0.
+```shell
+termux-setup-storage
+```
+Export to sql3 format:
+```shell
+buku --export storage/shared/bookmarks.db
+```
+When importing:
+```shell
+# OPTIONAL: delete all bookmarks from buku database
+buku -d
+# Import database
+buku --import storage/shared/bookmarks.db
+```

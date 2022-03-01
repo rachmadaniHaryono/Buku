@@ -1,0 +1,8 @@
+1. Update `__version__` in `buku`
+2. Update date and version in `buku.1`
+3. Update User Agent
+4. Make sure help text in `README.md` is up-to-date
+5. Review commit history since last release and update `CHANGELOG`
+6. Create a *signed tag* and push to GitHub
+7. Create a GitHub release and populate the release notes section with what went into `CHANGELOG` earlier
+8. Notify downstream package maintainers

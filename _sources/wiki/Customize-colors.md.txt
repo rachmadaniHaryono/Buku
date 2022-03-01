@@ -1,0 +1,60 @@
+`buku` allows you to customize the color scheme via a five-letter string, reminiscent of BSD `LSCOLORS`. The five letters represent the colors of
+
+- index
+- title
+- url
+- description/comment/note
+- tag
+
+respectively. The five-letter string is passed in either as the argument to the `--colors` option, or as the value of the environment variable `BUKU_COLORS`.
+
+We offer the following colors/styles:
+
+Letter | Color/Style
+------ | -----------
+a      | black
+b      | red
+c      | green
+d      | yellow
+e      | blue
+f      | magenta
+g      | cyan
+h      | white
+i      | bright black
+j      | bright red
+k      | bright green
+l      | bright yellow
+m      | bright blue
+n      | bright magenta
+o      | bright cyan
+p      | bright white
+A-H    | bold version of the lowercase-letter color
+I-P    | bold version of the lowercase-letter bright color
+x      | normal
+X      | bold
+y      | reverse video
+Y      | bold reverse video
+
+The default colors string is `oKlxm`, which stands for
+
+- bright cyan index
+- bold bright green title
+- bright yellow url
+- normal description
+- bright blue tag
+
+Note that
+
+- Bright colors (implemented as `\x1b[90m`–`\x1b[97m`) may not be available in all color-capable terminal emulators;
+- Some terminal emulators draw bold text in bright colors instead;
+- Some terminal emulators only distinguish between bold and bright colors via a default-off switch.
+
+Please consult the manual of your terminal emulator as well as the [Wikipedia article](https://en.wikipedia.org/wiki/ANSI_escape_code) on ANSI escape sequences.
+
+#### Windows support
+
+By default colors are disabled on Windows because cmd doesn't understand POSIX color sequences. However,
+
+- option `--colors` enables colors
+- environment variable `BUKU_COLORS`, if set, enables colors
+- `buku` can detect ConEmu and show color codes

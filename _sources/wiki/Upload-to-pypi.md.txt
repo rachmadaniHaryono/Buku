@@ -1,0 +1,55 @@
+## Buku 3.8 or newer with readme.md
+
+1. register to pypi and test.pypi
+2. upgrade setuptools. `setuptools>=38.6.0` is required to produce a distribution with the new metadata
+3. make a source distribution. command: `python setup.py sdist`. in this example it will produce `dist/buku-3.8.tar.gz`
+4. install `twine>=1.11.0`.
+5. upload first to test.pypi. command: `twine upload --repository-url https://test.pypi.org/legacy/ dist/buku-3.8.tar.gz`
+6. if upload success but result is not as intended, change the version with `postn`-suffix format. fix the program and go to number 5.
+7. if upload sucsess and result is as intended:
+    1. check the program version. maybe rolled it back to original if possible
+    2. upload it to pypi. command: `twine upload --repository-url https://upload.pypi.org/legacy/ dist/buku-3.8.tar.gz`
+
+this guideline is based on this guide https://dustingram.com/articles/2018/03/16/markdown-descriptions-on-pypi
+
+## Buku 3.7 or older with readme.rst
+
+1. register to pypi and test.pypi
+2. create ~/.pypirc and fill it with your config (example below)
+3. remove readme.rst if exist
+4. generate readme.rst
+5. applied following fix:
+    1. check any text that maybe recognized as enumerated list
+    2. newline between example section
+6. upload first to test.pypi. command: python3 setup.py sdist upload -r pypitest
+7. if upload success but result is not as intended, change the version with `postn`-suffix format. fix the program and go to number 6.
+8. if upload sucsess and result is as intended:
+    1. check the program version. maybe rolled it back to original if possible
+    2. upload it to pypi. command: python3 setup.py sdist upload -r pypi
+
+code to generate readme.rst, require pypandoc from pip and pandoc e.g. from ubuntu repo
+(note that everytime setup.py executed it will generate readme.rst if not exist)
+
+```python
+import pypandoc
+long_description = pypandoc.convert_file('README.md', 'rst')
+with open("README.rst", "w") as f:
+    f.write(long_description)
+```
+example pypirc
+```ini
+[distutils]
+index-servers =
+  pypi
+  pypitest
+
+[pypi]
+repository=https://pypi.python.org/pypi
+username=RachmadaniHaryono
+password=<password>
+
+[pypitest]
+repository=https://test.pypi.org/legacy/
+username=rachmadaniHaryono
+password=<password>
+```

@@ -1,0 +1,34 @@
+`buku` is developed as a powerful python library for bookmark management. All functionality are available through carefully designed APIs. `main()` is a good usage example. It's also possible to use a custom database file in multi-user scenarios. Check out the documentation for the following APIs which accept an optional argument as database.
+
+```python
+>>> import buku
+>>> buku.BukuDb.initdb(dbfile=None)
+>>> buku.BukuCrypt.encrypt_file(iterations, dbfile=None)
+>>> buku.BukuCrypt.decrypt_file(iterations, dbfile=None)
+```
+
+NOTE: This flexibility is not exposed in the program.
+
+An example to use buku as library
+
+```python
+>>> import buku
+>>> buku.__version__
+'4.4'
+>>> bdb = buku.BukuDb(dbfile='temp.db')
+>>> bdb.get_rec_all()
+[]
+>>> bdb.add_rec(url='https://example.com', title_in='example title', tags_in='tag1', desc='example desc')
+1
+>>> bdb.get_rec_all()
+[(1, 'https://example.com', 'example title', ',tag1,', 'example desc', 0)]
+>>> # id, url, title, tags, description, flags
+>>> bdb.add_rec(url='https://example.com/1.jpg')
+1
+>>> bdb.get_rec_all()
+[(1, 'https://example.com', 'example title', ',tag1,', 'example desc', 0),
+ (2, 'https://example.com/1.jpg', None, ',', '', 0)]
+>>> # Note: if record don't have tags, it will return ',' (comma character)
+```
+
+The [bukuserver](https://github.com/jarun/buku/tree/master/bukuserver) has several wrapper web APIs. Feel free to update if you need them.

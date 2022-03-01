@@ -1,0 +1,34 @@
+## Piped input
+
+`buku` waits until its input is closed when not started in a tty. For example, the following hangs:
+
+    $ cat | buku
+This is the intended behavior as the primary reason behind supporting piped input is to add bookmarks with a keyboard shortcut. Third-party applications should explicitly close the input stream or use a wrapper script like the following one:
+
+    #!/bin/bash
+
+    echo $1 | buku -a
+
+## Fuzzy search
+[fzf](https://github.com/junegunn/fzf) can be used for as you type searching and opening of bookmarks. Multiple bookmarks can be selected with tab (enter to open). Install fzf and place this function in `~/.bashrc`
+```sh
+fb() {
+    # save newline separated string into an array
+    mapfile -t website <<< "$(buku -p -f 5 | column -ts$'\t' | fzf --multi)"
+
+    # open each website
+    for i in "${website[@]}"; do
+        index="$(echo "$i" | awk '{print $1}')"
+        buku -p "$index"
+        buku -o "$index"
+    done
+}
+```
+
+## cmder integration (Windows)
+
+cmder creates `HOME`  variable  in  [`init.bat`](https://github.com/cmderdev/cmder/blob/36f4ce0e3c664b23c3652f180b29e9238860b203/vendor/init.bat#L401-L403) when it starts.
+
+`buku` sets its database path according to existence of `HOME` variable, which is not defined by default on Windows. For using related projects like [bukubrow](https://github.com/samhh/bukubrow-webext#bukubrow), [bukubrow-host](https://github.com/SamHH/bukubrow-host#bukubrow-host) the bookmark database should be in the standard path, which rely on [non-presence of HOME variable in windows](https://github.com/jarun/buku/blob/5b171fc9b33d14f575ac427c6674bc2f3cc4df93/buku#L401-L427).
+
+For using `buku` it's required to `set HOME=` in `%cmder_root%/config/user_profile.cmd` as was suggested by [cmder developers](https://github.com/cmderdev/cmder/issues/2555#issuecomment-855332219).

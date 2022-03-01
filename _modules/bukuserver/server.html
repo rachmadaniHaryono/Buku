@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bukuserver.server &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>bukuserver.server</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for bukuserver.server</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># pylint: disable=wrong-import-order, ungrouped-imports</span>
+<span class="sd">&quot;&quot;&quot;Server module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">T</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span>  <span class="c1"># NOQA; type: ignore</span>
+<span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">mock</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+
+<span class="kn">from</span> <span class="nn">flask.cli</span> <span class="kn">import</span> <span class="n">FlaskGroup</span>
+<span class="kn">from</span> <span class="nn">flask.views</span> <span class="kn">import</span> <span class="n">MethodView</span>
+<span class="kn">from</span> <span class="nn">flask_admin</span> <span class="kn">import</span> <span class="n">Admin</span>
+<span class="kn">from</span> <span class="nn">flask_api</span> <span class="kn">import</span> <span class="n">FlaskAPI</span><span class="p">,</span> <span class="n">exceptions</span><span class="p">,</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">flask_bootstrap</span> <span class="kn">import</span> <span class="n">Bootstrap</span>
+<span class="kn">from</span> <span class="nn">flask_paginate</span> <span class="kn">import</span> <span class="n">Pagination</span><span class="p">,</span> <span class="n">get_page_parameter</span><span class="p">,</span> <span class="n">get_per_page_parameter</span>
+
+<span class="kn">import</span> <span class="nn">buku</span>
+<span class="kn">from</span> <span class="nn">buku</span> <span class="kn">import</span> <span class="n">BukuDb</span><span class="p">,</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">network_handler</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">flask_reverse_proxy_fix.middleware</span> <span class="kn">import</span> <span class="n">ReverseProxyPrefixFix</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">ReverseProxyPrefixFix</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">import</span> <span class="nn">flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">flask_version</span>  <span class="c1"># type: ignore</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">abort</span><span class="p">,</span>
+    <span class="n">current_app</span><span class="p">,</span>
+    <span class="n">flash</span><span class="p">,</span>
+    <span class="n">jsonify</span><span class="p">,</span>
+    <span class="n">redirect</span><span class="p">,</span>
+    <span class="n">render_template</span><span class="p">,</span>
+    <span class="n">request</span><span class="p">,</span>
+    <span class="n">url_for</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">markupsafe</span> <span class="kn">import</span> <span class="n">Markup</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">forms</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">views</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">bukuserver</span> <span class="kn">import</span> <span class="n">forms</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">views</span>
+
+
+<span class="n">STATISTIC_DATA</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="get_bukudb"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.get_bukudb">[docs]</a><span class="k">def</span> <span class="nf">get_bukudb</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;get bukudb instance&quot;&quot;&quot;</span>
+    <span class="n">db_file</span> <span class="o">=</span> <span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_DB_FILE&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">db_file</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="get_tags"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.get_tags">[docs]</a><span class="k">def</span> <span class="nf">get_tags</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;get tags.&quot;&quot;&quot;</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span><span class="o">.</span><span class="n">get_tag_all</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="n">tags</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/api/&#39;</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;bukuserver/tags.html&#39;</span><span class="p">,</span> <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="handle_network"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.handle_network">[docs]</a><span class="k">def</span> <span class="nf">handle_network</span><span class="p">():</span>
+    <span class="n">failed_resp</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">],</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">failed_resp</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">network_handler</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;tags&#39;</span><span class="p">,</span> <span class="s1">&#39;recognized mime&#39;</span><span class="p">,</span> <span class="s1">&#39;bad url&#39;</span><span class="p">]</span>
+        <span class="n">res_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">res</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">res_dict</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">failed_resp</span></div>
+
+
+<div class="viewcode-block" id="update_tag"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.update_tag">[docs]</a><span class="k">def</span> <span class="nf">update_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">):</span>
+        <span class="n">new_tags</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span><span class="o">.</span><span class="n">replace_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">new_tags</span><span class="p">)</span>
+        <span class="n">op_text</span> <span class="o">=</span> <span class="s1">&#39;replace tag [</span><span class="si">{}</span><span class="s1">] with [</span><span class="si">{}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_tags</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span> <span class="ow">and</span> <span class="n">result_flag</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/api/&#39;</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]),</span>
+                   <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/api/&#39;</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+                   <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span> <span class="ow">and</span> <span class="n">result_flag</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;Success </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">op_text</span><span class="p">)),</span> <span class="s1">&#39;success&#39;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;get_tags-html&#39;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="n">Markup</span><span class="p">(</span><span class="s1">&#39;Failed </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">op_text</span><span class="p">)),</span> <span class="s1">&#39;danger&#39;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;get_tags-html&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">abort</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Unknown Condition&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="refresh_bookmark"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.refresh_bookmark">[docs]</a><span class="k">def</span> <span class="nf">refresh_bookmark</span><span class="p">(</span><span class="n">rec_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">rec_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span><span class="o">.</span><span class="n">refreshdb</span><span class="p">(</span><span class="n">rec_id</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;threads&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span><span class="o">.</span><span class="n">refreshdb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;threads&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">result_flag</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]),</span>
+               <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+               <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+               <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+               <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="get_tiny_url"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.get_tiny_url">[docs]</a><span class="k">def</span> <span class="nf">get_tiny_url</span><span class="p">(</span><span class="n">rec_id</span><span class="p">):</span>
+    <span class="n">shortened_url</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span><span class="o">.</span><span class="n">tnyfy_url</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">shortened_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">shortened_url</span><span class="p">}</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+            <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+            <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="search_bookmarks"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.search_bookmarks">[docs]</a><span class="k">def</span> <span class="nf">search_bookmarks</span><span class="p">():</span>
+    <span class="n">arg_obj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;DELETE&#39;</span> <span class="k">else</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span>
+    <span class="n">search_bookmarks_form</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">SearchBookmarksForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">is_api_request_path</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/api/&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">is_api_request_path</span><span class="p">:</span>
+        <span class="n">keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;keywords&#39;</span><span class="p">)</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;all_keywords&#39;</span><span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;regex&#39;</span><span class="p">)</span>
+        <span class="c1"># api request is more strict</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">all_keywords</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">all_keywords</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">deep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">deep</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">regex</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">regex</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">all_keywords</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">all_keywords</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span>
+            <span class="n">all_keywords</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">deep</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">deep</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">deep</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">regex</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">keywords</span> <span class="o">=</span> <span class="n">search_bookmarks_form</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="n">search_bookmarks_form</span><span class="o">.</span><span class="n">all_keywords</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">search_bookmarks_form</span><span class="o">.</span><span class="n">deep</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">search_bookmarks_form</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">data</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+    <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">searchdb</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span>
+    <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">found_bookmarks</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">get_page_parameter</span><span class="p">(),</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">per_page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">get_per_page_parameter</span><span class="p">(),</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span>
+            <span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_PER_PAGE&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">DEFAULT_PER_PAGE</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">found_bookmarks</span><span class="p">:</span>
+                <span class="n">result_bookmark</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))),</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_bookmark</span><span class="p">)</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;total bookmarks:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="n">is_api_request_path</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pagination_total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">])</span>
+            <span class="n">bms</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">chunks</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">],</span> <span class="n">per_page</span><span class="p">))</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bms</span><span class="p">[</span><span class="n">page</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+                <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">:</span><span class="si">{}</span><span class="s1">, result bookmarks:</span><span class="si">{}</span><span class="s1">, page:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="nb">type</span><span class="p">(</span><span class="n">err</span><span class="p">),</span> <span class="n">err</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">]),</span> <span class="n">page</span>
+                <span class="p">))</span>
+            <span class="n">pagination</span> <span class="o">=</span> <span class="n">Pagination</span><span class="p">(</span>
+                <span class="n">page</span><span class="o">=</span><span class="n">page</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">pagination_total</span><span class="p">,</span> <span class="n">per_page</span><span class="o">=</span><span class="n">per_page</span><span class="p">,</span>
+                <span class="n">search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">record_name</span><span class="o">=</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">,</span> <span class="n">bs_version</span><span class="o">=</span><span class="mi">3</span>
+            <span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span>
+                <span class="s1">&#39;bukuserver/bookmarks.html&#39;</span><span class="p">,</span>
+                <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span> <span class="n">pagination</span><span class="o">=</span><span class="n">pagination</span><span class="p">,</span>
+                <span class="n">search_bookmarks_form</span><span class="o">=</span><span class="n">search_bookmarks_form</span><span class="p">,</span>
+                <span class="n">create_bookmarks_form</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">BookmarkForm</span><span class="p">(),</span>
+            <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">found_bookmarks</span><span class="p">:</span>
+                <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">bookmark</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">result_flag</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+                           <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+                           <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]),</span>
+                   <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">res</span></div>
+
+
+<div class="viewcode-block" id="get_bool_from_env_var"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.get_bool_from_env_var">[docs]</a><span class="k">def</span> <span class="nf">get_bool_from_env_var</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default_value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get bool value from env var.&quot;&quot;&quot;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">default_value</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;true&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;false&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">default_value</span></div>
+
+
+<div class="viewcode-block" id="create_app"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.create_app">[docs]</a><span class="k">def</span> <span class="nf">create_app</span><span class="p">(</span><span class="n">db_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;create app.&quot;&quot;&quot;</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">FlaskAPI</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="n">per_page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_PER_PAGE&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">DEFAULT_PER_PAGE</span><span class="p">)))</span>
+    <span class="n">per_page</span> <span class="o">=</span> <span class="n">per_page</span> <span class="k">if</span> <span class="n">per_page</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">views</span><span class="o">.</span><span class="n">DEFAULT_PER_PAGE</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_PER_PAGE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">per_page</span>
+    <span class="n">url_render_mode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_URL_RENDER_MODE&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">DEFAULT_URL_RENDER_MODE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">url_render_mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="s1">&#39;netloc&#39;</span><span class="p">):</span>
+        <span class="n">url_render_mode</span> <span class="o">=</span> <span class="n">views</span><span class="o">.</span><span class="n">DEFAULT_URL_RENDER_MODE</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_URL_RENDER_MODE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">url_render_mode</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_SECRET_KEY&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_DISABLE_FAVICON&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">get_bool_from_env_var</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_DISABLE_FAVICON&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_OPEN_IN_NEW_TAB&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">get_bool_from_env_var</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_OPEN_IN_NEW_TAB&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_DB_FILE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_DB_FILE&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">db_file</span>
+    <span class="n">reverse_proxy_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;BUKUSERVER_REVERSE_PROXY_PATH&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">reverse_proxy_path</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">reverse_proxy_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: reverse proxy path should include preceding slash&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">reverse_proxy_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: reverse proxy path should not include trailing slash&#39;</span><span class="p">)</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;REVERSE_PROXY_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reverse_proxy_path</span>
+        <span class="k">if</span> <span class="n">ReverseProxyPrefixFix</span><span class="p">:</span>
+            <span class="n">ReverseProxyPrefixFix</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Failed to import ReverseProxyPrefixFix&#39;</span><span class="p">)</span>
+    <span class="n">bukudb</span> <span class="o">=</span> <span class="n">BukuDb</span><span class="p">(</span><span class="n">dbfile</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;BUKUSERVER_DB_FILE&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">()</span><span class="o">.</span><span class="n">push</span><span class="p">()</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">bukudb</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">shell_context_processor</span>
+    <span class="k">def</span> <span class="nf">shell_context</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Shell context definition.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;app&#39;</span><span class="p">:</span> <span class="n">app</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">:</span> <span class="n">bukudb</span><span class="p">}</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">jinja_env</span><span class="o">.</span><span class="n">filters</span><span class="p">[</span><span class="s1">&#39;netloc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">netloc</span>  <span class="c1"># pylint: disable=no-member</span>
+
+    <span class="n">Bootstrap</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="n">admin</span> <span class="o">=</span> <span class="n">Admin</span><span class="p">(</span>
+        <span class="n">app</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;buku server&#39;</span><span class="p">,</span> <span class="n">template_mode</span><span class="o">=</span><span class="s1">&#39;bootstrap3&#39;</span><span class="p">,</span>
+        <span class="n">index_view</span><span class="o">=</span><span class="n">views</span><span class="o">.</span><span class="n">CustomAdminIndexView</span><span class="p">(</span>
+            <span class="n">template</span><span class="o">=</span><span class="s1">&#39;bukuserver/home.html&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="s1">&#39;/&#39;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="c1"># routing</span>
+    <span class="c1">#  api</span>
+    <span class="n">tag_api_view</span> <span class="o">=</span> <span class="n">ApiTagView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;tag_api&#39;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/tags&#39;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;tag&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="n">view_func</span><span class="o">=</span><span class="n">tag_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/tags/&lt;tag&gt;&#39;</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">tag_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">])</span>
+    <span class="n">bookmark_api_view</span> <span class="o">=</span> <span class="n">ApiBookmarkView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;bookmark_api&#39;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks&#39;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;rec_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="n">view_func</span><span class="o">=</span><span class="n">bookmark_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks/&lt;int:rec_id&gt;&#39;</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">bookmark_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks/refresh&#39;</span><span class="p">,</span> <span class="s1">&#39;refresh_bookmark&#39;</span><span class="p">,</span> <span class="n">refresh_bookmark</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;rec_id&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks/&lt;int:rec_id&gt;/refresh&#39;</span><span class="p">,</span> <span class="s1">&#39;refresh_bookmark&#39;</span><span class="p">,</span> <span class="n">refresh_bookmark</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks/&lt;int:rec_id&gt;/tiny&#39;</span><span class="p">,</span> <span class="s1">&#39;get_tiny_url&#39;</span><span class="p">,</span> <span class="n">get_tiny_url</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/network_handle&#39;</span><span class="p">,</span> <span class="s1">&#39;network_handle&#39;</span><span class="p">,</span> <span class="n">handle_network</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+    <span class="n">bookmark_range_api_view</span> <span class="o">=</span> <span class="n">ApiBookmarkRangeView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;bookmark_range_api&#39;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span>
+        <span class="s1">&#39;/api/bookmarks/&lt;int:starting_id&gt;/&lt;int:ending_id&gt;&#39;</span><span class="p">,</span>
+        <span class="n">view_func</span><span class="o">=</span><span class="n">bookmark_range_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+    <span class="n">bookmark_search_api_view</span> <span class="o">=</span> <span class="n">ApiBookmarkSearchView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;bookmark_search_api&#39;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/api/bookmarks/search&#39;</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">bookmark_search_api_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">])</span>
+    <span class="n">bookmarklet_view</span> <span class="o">=</span> <span class="n">BookmarkletView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;bookmarklet&#39;</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_url_rule</span><span class="p">(</span><span class="s1">&#39;/bookmarklet&#39;</span><span class="p">,</span> <span class="n">view_func</span><span class="o">=</span><span class="n">bookmarklet_view</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+    <span class="c1">#  non api</span>
+    <span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">BookmarkModelView</span><span class="p">(</span>
+        <span class="n">bukudb</span><span class="p">,</span> <span class="s1">&#39;Bookmarks&#39;</span><span class="p">,</span> <span class="n">page_size</span><span class="o">=</span><span class="n">per_page</span><span class="p">,</span> <span class="n">url_render_mode</span><span class="o">=</span><span class="n">url_render_mode</span><span class="p">))</span>
+    <span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">TagModelView</span><span class="p">(</span>
+        <span class="n">bukudb</span><span class="p">,</span> <span class="s1">&#39;Tags&#39;</span><span class="p">,</span> <span class="n">page_size</span><span class="o">=</span><span class="n">per_page</span><span class="p">))</span>
+    <span class="n">admin</span><span class="o">.</span><span class="n">add_view</span><span class="p">(</span><span class="n">views</span><span class="o">.</span><span class="n">StatisticView</span><span class="p">(</span>
+        <span class="n">bukudb</span><span class="p">,</span> <span class="s1">&#39;Statistic&#39;</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="s1">&#39;statistic&#39;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">app</span></div>
+
+
+<div class="viewcode-block" id="search_tag"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.search_tag">[docs]</a><span class="k">def</span> <span class="nf">search_tag</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">BukuDb</span><span class="p">,</span> <span class="n">stag</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="n">T</span><span class="o">.</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">T</span><span class="o">.</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;search tag.</span>
+
+<span class="sd">    db:</span>
+<span class="sd">        buku db instance</span>
+<span class="sd">    stag:</span>
+<span class="sd">        search tag</span>
+<span class="sd">    limit:</span>
+<span class="sd">        positive integer limit</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple</span>
+<span class="sd">        list of unique tags sorted alphabetically and dictionary of tag and its usage count</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        if limit is not positive</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">limit</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;limit must be positive&quot;</span><span class="p">)</span>
+    <span class="n">tags</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">()</span>
+    <span class="n">query_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SELECT DISTINCT tags , COUNT(tags) FROM bookmarks&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">stag</span><span class="p">:</span>
+        <span class="n">query_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;where tags LIKE :search_tag&quot;</span><span class="p">)</span>
+    <span class="n">query_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;GROUP BY tags&quot;</span><span class="p">)</span>
+    <span class="n">row</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query_list</span><span class="p">),</span> <span class="p">{</span><span class="s2">&quot;search_tag&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">stag</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">}):</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">buku</span><span class="o">.</span><span class="n">DELIM</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">buku</span><span class="o">.</span><span class="n">DELIM</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">tag</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+            <span class="n">counter</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">+=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">tags</span><span class="p">)),</span> <span class="nb">dict</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">limit</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ApiTagView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiTagView">[docs]</a><span class="k">class</span> <span class="nc">ApiTagView</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ApiTagView.get"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiTagView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="n">get_bukudb</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="n">search_tag</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">bukudb</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)[</span><span class="mi">0</span><span class="p">]}</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="n">search_tag</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">bukudb</span><span class="p">,</span> <span class="n">stag</span><span class="o">=</span><span class="n">tag</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">tag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">NotFound</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">tag</span><span class="p">,</span> <span class="n">usage_count</span><span class="o">=</span><span class="n">tags</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">tag</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="ApiTagView.put"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiTagView.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tag</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="n">get_bukudb</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_tags</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="k">if</span> <span class="n">new_tags</span><span class="p">:</span>
+                <span class="n">new_tags</span> <span class="o">=</span> <span class="n">new_tags</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">],</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">ParseError</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">replace_tag</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">new_tags</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result_flag</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">],</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">],</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="ApiBookmarkView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkView">[docs]</a><span class="k">class</span> <span class="nc">ApiBookmarkView</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ApiBookmarkView.get"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">rec_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+            <span class="n">all_bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_all</span><span class="p">()</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">:</span> <span class="p">[]}</span>  <span class="c1"># type: Dict[str, Any]</span>
+            <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">all_bookmarks</span><span class="p">:</span>
+                <span class="n">result_bookmark</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))),</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;/api/&#39;</span><span class="p">):</span>
+                    <span class="n">result_bookmark</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_bookmark</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+            <span class="n">bookmark</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_by_id</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">bookmark</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))),</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> \
+                       <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkView.post"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkView.post">[docs]</a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec_id</span><span class="p">:</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">create_bookmarks_form</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">BookmarkForm</span><span class="p">()</span>
+        <span class="n">url_data</span> <span class="o">=</span> <span class="n">create_bookmarks_form</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span>
+            <span class="n">url_data</span><span class="p">,</span>
+            <span class="n">create_bookmarks_form</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">create_bookmarks_form</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">create_bookmarks_form</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">data</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">result_flag</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">])</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkView.put"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkView.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">update_rec</span><span class="p">(</span>
+            <span class="n">rec_id</span><span class="p">,</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">),</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">result_flag</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]),</span>
+                   <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+                   <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkView.delete"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkView.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rec_id</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">rec_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+            <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;buku.read_in&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">):</span>
+                <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">cleardb</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">result_flag</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">])</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+            <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">rec_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">result_flag</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">]),</span>
+                       <span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+                       <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+                       <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+                       <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="ApiBookmarkRangeView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkRangeView">[docs]</a><span class="k">class</span> <span class="nc">ApiBookmarkRangeView</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ApiBookmarkRangeView.get"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkRangeView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">starting_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ending_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">max_id</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_max_id</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">starting_id</span> <span class="o">&gt;</span> <span class="n">max_id</span> <span class="ow">or</span> <span class="n">ending_id</span> <span class="o">&gt;</span> <span class="n">max_id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> \
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">:</span> <span class="p">{}}</span>  <span class="c1"># type: ignore</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">starting_id</span><span class="p">,</span> <span class="n">ending_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">bookmark</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_by_id</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))),</span>
+                <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkRangeView.put"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkRangeView.put">[docs]</a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">starting_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ending_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">max_id</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_max_id</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">starting_id</span> <span class="o">&gt;</span> <span class="n">max_id</span> <span class="ow">or</span> <span class="n">ending_id</span> <span class="o">&gt;</span> <span class="n">max_id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> \
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">starting_id</span><span class="p">,</span> <span class="n">ending_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">updated_bookmark</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
+            <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">update_rec</span><span class="p">(</span>
+                <span class="n">i</span><span class="p">,</span>
+                <span class="n">updated_bookmark</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">),</span>
+                <span class="n">updated_bookmark</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+                <span class="n">updated_bookmark</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+                <span class="n">updated_bookmark</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">result_flag</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">(</span>
+                    <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span>
+                    <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+                    <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkRangeView.delete"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkRangeView.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">starting_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">ending_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">max_id</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_max_id</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">starting_id</span> <span class="o">&gt;</span> <span class="n">max_id</span> <span class="ow">or</span> <span class="n">ending_id</span> <span class="o">&gt;</span> <span class="n">max_id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">]),</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span> \
+                   <span class="p">{</span><span class="s1">&#39;ContentType&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">starting_id</span><span class="p">,</span> <span class="n">ending_id</span><span class="p">])</span>
+        <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">starting_id</span><span class="p">,</span> <span class="n">ending_id</span><span class="p">,</span> <span class="n">is_range</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result_flag</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">])</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="ApiBookmarkSearchView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkSearchView">[docs]</a><span class="k">class</span> <span class="nc">ApiBookmarkSearchView</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>
+
+<div class="viewcode-block" id="ApiBookmarkSearchView.get"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkSearchView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">arg_obj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span>
+        <span class="n">keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;keywords&#39;</span><span class="p">)</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;all_keywords&#39;</span><span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;regex&#39;</span><span class="p">)</span>
+        <span class="c1"># api request is more strict</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">all_keywords</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">all_keywords</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">deep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">deep</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">regex</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">regex</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">all_keywords</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">all_keywords</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span>
+            <span class="n">all_keywords</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">deep</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">deep</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">deep</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">regex</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">searchdb</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span>
+        <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">found_bookmarks</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">found_bookmarks</span><span class="p">:</span>
+                <span class="n">result_bookmark</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                    <span class="s1">&#39;tags&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))),</span>
+                    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">bookmark</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_bookmark</span><span class="p">)</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;total bookmarks:</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;bookmarks&#39;</span><span class="p">])))</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="ApiBookmarkSearchView.delete"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.ApiBookmarkSearchView.delete">[docs]</a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">arg_obj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span>
+        <span class="n">keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">&#39;keywords&#39;</span><span class="p">)</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;all_keywords&#39;</span><span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">arg_obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;regex&#39;</span><span class="p">)</span>
+        <span class="c1"># api request is more strict</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">all_keywords</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">all_keywords</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">deep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">deep</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">regex</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">regex</span>
+        <span class="n">all_keywords</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">all_keywords</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">all_keywords</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span>
+            <span class="n">all_keywords</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="p">)</span>
+        <span class="n">deep</span> <span class="o">=</span> <span class="n">deep</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">deep</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">deep</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="n">regex</span> <span class="o">=</span> <span class="n">regex</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="n">regex</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">searchdb</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span>
+        <span class="n">found_bookmarks</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">found_bookmarks</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">found_bookmarks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">found_bookmarks</span><span class="p">:</span>
+                <span class="n">result_flag</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">bookmark</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">result_flag</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;failure&#39;</span><span class="p">])</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span>
+        <span class="k">if</span> <span class="n">res</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">response_template</span><span class="p">[</span><span class="s1">&#39;success&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="BookmarkletView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.BookmarkletView">[docs]</a><span class="k">class</span> <span class="nc">BookmarkletView</span><span class="p">(</span><span class="n">MethodView</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+<div class="viewcode-block" id="BookmarkletView.get"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.BookmarkletView.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">)</span>
+
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flask</span><span class="o">.</span><span class="n">g</span><span class="p">,</span> <span class="s1">&#39;bukudb&#39;</span><span class="p">,</span> <span class="n">get_bukudb</span><span class="p">())</span>
+        <span class="n">rec_id</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_id</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rec_id</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;bookmark.edit_view&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="n">rec_id</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;bookmark.create_view&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">))</span></div></div>
+
+
+<div class="viewcode-block" id="CustomFlaskGroup"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.CustomFlaskGroup">[docs]</a><span class="k">class</span> <span class="nc">CustomFlaskGroup</span><span class="p">(</span><span class="n">FlaskGroup</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">help</span> <span class="o">=</span> <span class="s1">&#39;Show the program version&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">get_custom_version</span></div>
+
+
+<div class="viewcode-block" id="get_custom_version"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.server.get_custom_version">[docs]</a><span class="k">def</span> <span class="nf">get_custom_version</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="ow">or</span> <span class="n">ctx</span><span class="o">.</span><span class="n">resilient_parsing</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%(app_name)s</span><span class="s1"> </span><span class="si">%(app_version)s</span><span class="se">\n</span><span class="s1">Flask </span><span class="si">%(version)s</span><span class="se">\n</span><span class="s1">Python </span><span class="si">%(python_version)s</span><span class="s1">&#39;</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="n">message</span> <span class="o">%</span> <span class="p">{</span>
+        <span class="s1">&#39;app_name&#39;</span><span class="p">:</span> <span class="s1">&#39;buku&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;app_version&#39;</span><span class="p">:</span> <span class="n">__version__</span><span class="p">,</span>
+        <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">flask_version</span><span class="p">,</span>
+        <span class="s1">&#39;python_version&#39;</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
+    <span class="p">},</span> <span class="n">color</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ctx</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span></div>
+
+
+<span class="nd">@click</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="bp">cls</span><span class="o">=</span><span class="n">CustomFlaskGroup</span><span class="p">,</span> <span class="n">create_app</span><span class="o">=</span><span class="n">create_app</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">cli</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;This is a script for the bukuserver application.&quot;&quot;&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cli</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

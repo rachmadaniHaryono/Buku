@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bukuserver package &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="buku module" href="buku.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiki/Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">bukuserver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-bukuserver.filters">bukuserver.filters module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bukuserver.forms">bukuserver.forms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bukuserver.response">bukuserver.response module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bukuserver.server">bukuserver.server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-bukuserver.views">bukuserver.views module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>bukuserver package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bukuserver.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bukuserver-package">
+<h1>bukuserver package<a class="headerlink" href="#bukuserver-package" title="Permalink to this headline"></a></h1>
+<section id="module-bukuserver.filters">
+<span id="bukuserver-filters-module"></span><h2>bukuserver.filters module<a class="headerlink" href="#module-bukuserver.filters" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BaseFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BaseFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_admin.model.filters.BaseFilter</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BaseFilter.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BaseFilter.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BaseFilter.apply" title="Permalink to this definition"></a></dt>
+<dd><p>Apply search criteria to the query and return new query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> – Query</p></li>
+<li><p><strong>value</strong> – Search criteria</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BaseFilter.operation">
+<span class="sig-name descname"><span class="pre">operation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BaseFilter.operation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BaseFilter.operation" title="Permalink to this definition"></a></dt>
+<dd><p>Return readable operation name.</p>
+<p>For example: u’equals’</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkBaseFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkBaseFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BaseFilter" title="bukuserver.filters.BaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BaseFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkBaseFilter.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkBaseFilter.clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkBaseFilter.clean" title="Permalink to this definition"></a></dt>
+<dd><p>Parse value into python format. Occurs before .apply()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to parse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkBukuFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkBukuFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkBukuFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkBukuFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BaseFilter" title="bukuserver.filters.BaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BaseFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkBukuFilter.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkBukuFilter.apply"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkBukuFilter.apply" title="Permalink to this definition"></a></dt>
+<dd><p>Apply search criteria to the query and return new query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> – Query</p></li>
+<li><p><strong>value</strong> – Search criteria</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkBukuFilter.operation">
+<span class="sig-name descname"><span class="pre">operation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkBukuFilter.operation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkBukuFilter.operation" title="Permalink to this definition"></a></dt>
+<dd><p>Return readable operation name.</p>
+<p>For example: u’equals’</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkField</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkField"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkField" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField.DESCRIPTION">
+<span class="sig-name descname"><span class="pre">DESCRIPTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#bukuserver.filters.BookmarkField.DESCRIPTION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField.ID">
+<span class="sig-name descname"><span class="pre">ID</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#bukuserver.filters.BookmarkField.ID" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField.TAGS">
+<span class="sig-name descname"><span class="pre">TAGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#bukuserver.filters.BookmarkField.TAGS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField.TITLE">
+<span class="sig-name descname"><span class="pre">TITLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#bukuserver.filters.BookmarkField.TITLE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkField.URL">
+<span class="sig-name descname"><span class="pre">URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#bukuserver.filters.BookmarkField.URL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberEqualFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkTagNumberEqualFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberEqualFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberEqualFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BookmarkBaseFilter" title="bukuserver.filters.BookmarkBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BookmarkBaseFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberEqualFilter.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberEqualFilter.clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberEqualFilter.clean" title="Permalink to this definition"></a></dt>
+<dd><p>Parse value into python format. Occurs before .apply()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to parse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberGreaterFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkTagNumberGreaterFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberGreaterFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberGreaterFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BookmarkTagNumberEqualFilter" title="bukuserver.filters.BookmarkTagNumberEqualFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BookmarkTagNumberEqualFilter</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberNotEqualFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkTagNumberNotEqualFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberNotEqualFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberNotEqualFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BookmarkTagNumberEqualFilter" title="bukuserver.filters.BookmarkTagNumberEqualFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BookmarkTagNumberEqualFilter</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberSmallerFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">BookmarkTagNumberSmallerFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberSmallerFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberSmallerFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BookmarkBaseFilter" title="bukuserver.filters.BookmarkBaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BookmarkBaseFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.BookmarkTagNumberSmallerFilter.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#BookmarkTagNumberSmallerFilter.clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.BookmarkTagNumberSmallerFilter.clean" title="Permalink to this definition"></a></dt>
+<dd><p>Parse value into python format. Occurs before .apply()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to parse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">FilterType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#FilterType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.FilterType" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.BOTTOM_X">
+<span class="sig-name descname"><span class="pre">BOTTOM_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">bottom_x_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'bottom</span> <span class="pre">x'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.BOTTOM_X" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.EQUAL">
+<span class="sig-name descname"><span class="pre">EQUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">equal_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'equals'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.EQUAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.GREATER">
+<span class="sig-name descname"><span class="pre">GREATER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">greater_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'greater</span> <span class="pre">than'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.GREATER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.IN_LIST">
+<span class="sig-name descname"><span class="pre">IN_LIST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">in_list_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'in</span> <span class="pre">list'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.IN_LIST" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.NOT_EQUAL">
+<span class="sig-name descname"><span class="pre">NOT_EQUAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">not_equal_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'not</span> <span class="pre">equal'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.NOT_EQUAL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.NOT_IN_LIST">
+<span class="sig-name descname"><span class="pre">NOT_IN_LIST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">not_in_list_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'not</span> <span class="pre">in</span> <span class="pre">list'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.NOT_IN_LIST" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.SMALLER">
+<span class="sig-name descname"><span class="pre">SMALLER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">smaller_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'smaller</span> <span class="pre">than'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.SMALLER" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.filters.FilterType.TOP_X">
+<span class="sig-name descname"><span class="pre">TOP_X</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'func':</span> <span class="pre">&lt;function</span> <span class="pre">top_x_func&gt;,</span> <span class="pre">'text':</span> <span class="pre">'top</span> <span class="pre">x'}</span></em><a class="headerlink" href="#bukuserver.filters.FilterType.TOP_X" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.filters.TagBaseFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">TagBaseFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#TagBaseFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.TagBaseFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.filters.BaseFilter" title="bukuserver.filters.BaseFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.filters.BaseFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.filters.TagBaseFilter.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#TagBaseFilter.clean"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.TagBaseFilter.clean" title="Permalink to this definition"></a></dt>
+<dd><p>Parse value into python format. Occurs before .apply()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – Value to parse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.bottom_x_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">bottom_x_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#bottom_x_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.bottom_x_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.equal_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">equal_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#equal_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.equal_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.greater_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">greater_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#greater_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.greater_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.in_list_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">in_list_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#in_list_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.in_list_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.not_equal_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">not_equal_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#not_equal_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.not_equal_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.not_in_list_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">not_in_list_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#not_in_list_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.not_in_list_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.smaller_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">smaller_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#smaller_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.smaller_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.filters.top_x_func">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.filters.</span></span><span class="sig-name descname"><span class="pre">top_x_func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/filters.html#top_x_func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.filters.top_x_func" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-bukuserver.forms">
+<span id="bukuserver-forms-module"></span><h2>bukuserver.forms module<a class="headerlink" href="#module-bukuserver.forms" title="Permalink to this headline"></a></h2>
+<p>Forms module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.forms.BookmarkForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.forms.</span></span><span class="sig-name descname"><span class="pre">BookmarkForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/forms.html#BookmarkForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.forms.BookmarkForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.BookmarkForm.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(TextAreaField,</span> <span class="pre">(),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.BookmarkForm.description" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.BookmarkForm.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(StringField,</span> <span class="pre">(),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.BookmarkForm.tags" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.BookmarkForm.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(StringField,</span> <span class="pre">(),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.BookmarkForm.title" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.BookmarkForm.url">
+<span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(StringField,</span> <span class="pre">(),</span> <span class="pre">{'validators':</span> <span class="pre">[&lt;wtforms.validators.DataRequired</span> <span class="pre">object&gt;]})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.BookmarkForm.url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.forms.HomeForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.forms.</span></span><span class="sig-name descname"><span class="pre">HomeForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/forms.html#HomeForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.forms.HomeForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#bukuserver.forms.SearchBookmarksForm" title="bukuserver.forms.SearchBookmarksForm"><code class="xref py py-class docutils literal notranslate"><span class="pre">bukuserver.forms.SearchBookmarksForm</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.HomeForm.keyword">
+<span class="sig-name descname"><span class="pre">keyword</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(StringField,</span> <span class="pre">('Keyword',),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.HomeForm.keyword" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.forms.SearchBookmarksForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.forms.</span></span><span class="sig-name descname"><span class="pre">SearchBookmarksForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/forms.html#SearchBookmarksForm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.forms.SearchBookmarksForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_wtf.form.FlaskForm</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.SearchBookmarksForm.all_keywords">
+<span class="sig-name descname"><span class="pre">all_keywords</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(BooleanField,</span> <span class="pre">('Match</span> <span class="pre">all</span> <span class="pre">keywords',),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.SearchBookmarksForm.all_keywords" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.SearchBookmarksForm.deep">
+<span class="sig-name descname"><span class="pre">deep</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(BooleanField,</span> <span class="pre">('Deep</span> <span class="pre">search',),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.SearchBookmarksForm.deep" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.SearchBookmarksForm.keywords">
+<span class="sig-name descname"><span class="pre">keywords</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(FieldList,</span> <span class="pre">(&lt;UnboundField(StringField,</span> <span class="pre">('Keywords',),</span> <span class="pre">{})&gt;,),</span> <span class="pre">{'min_entries':</span> <span class="pre">1})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.SearchBookmarksForm.keywords" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.forms.SearchBookmarksForm.regex">
+<span class="sig-name descname"><span class="pre">regex</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;UnboundField(BooleanField,</span> <span class="pre">('Regex',),</span> <span class="pre">{})&gt;</span></em><a class="headerlink" href="#bukuserver.forms.SearchBookmarksForm.regex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bukuserver.response">
+<span id="bukuserver-response-module"></span><h2>bukuserver.response module<a class="headerlink" href="#module-bukuserver.response" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-bukuserver.server">
+<span id="bukuserver-server-module"></span><h2>bukuserver.server module<a class="headerlink" href="#module-bukuserver.server" title="Permalink to this headline"></a></h2>
+<p>Server module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkRangeView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">ApiBookmarkRangeView</span></span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkRangeView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkRangeView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.views.MethodView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkRangeView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">starting_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ending_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkRangeView.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkRangeView.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkRangeView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">starting_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ending_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkRangeView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkRangeView.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkRangeView.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'PUT'}</span></em><a class="headerlink" href="#bukuserver.server.ApiBookmarkRangeView.methods" title="Permalink to this definition"></a></dt>
+<dd><p>A list of methods this view can handle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkRangeView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">starting_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ending_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkRangeView.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkRangeView.put" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkSearchView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">ApiBookmarkSearchView</span></span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkSearchView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkSearchView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.views.MethodView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkSearchView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkSearchView.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkSearchView.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkSearchView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkSearchView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkSearchView.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkSearchView.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'DELETE',</span> <span class="pre">'GET'}</span></em><a class="headerlink" href="#bukuserver.server.ApiBookmarkSearchView.methods" title="Permalink to this definition"></a></dt>
+<dd><p>A list of methods this view can handle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">ApiBookmarkView</span></span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.views.MethodView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkView.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkView.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkView.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'POST',</span> <span class="pre">'PUT'}</span></em><a class="headerlink" href="#bukuserver.server.ApiBookmarkView.methods" title="Permalink to this definition"></a></dt>
+<dd><p>A list of methods this view can handle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkView.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkView.post" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiBookmarkView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiBookmarkView.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiBookmarkView.put" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.ApiTagView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">ApiTagView</span></span><a class="reference internal" href="_modules/bukuserver/server.html#ApiTagView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiTagView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.views.MethodView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiTagView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiTagView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiTagView.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.server.ApiTagView.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'GET',</span> <span class="pre">'PUT'}</span></em><a class="headerlink" href="#bukuserver.server.ApiTagView.methods" title="Permalink to this definition"></a></dt>
+<dd><p>A list of methods this view can handle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.ApiTagView.put">
+<span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#ApiTagView.put"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.ApiTagView.put" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.BookmarkletView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">BookmarkletView</span></span><a class="reference internal" href="_modules/bukuserver/server.html#BookmarkletView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.BookmarkletView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.views.MethodView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.server.BookmarkletView.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#BookmarkletView.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.BookmarkletView.get" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.server.BookmarkletView.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'GET'}</span></em><a class="headerlink" href="#bukuserver.server.BookmarkletView.methods" title="Permalink to this definition"></a></dt>
+<dd><p>A list of methods this view can handle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.server.CustomFlaskGroup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">CustomFlaskGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#CustomFlaskGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.CustomFlaskGroup" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask.cli.FlaskGroup</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.create_app">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">create_app</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#create_app"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.create_app" title="Permalink to this definition"></a></dt>
+<dd><p>create app.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.get_bool_from_env_var">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">get_bool_from_env_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/bukuserver/server.html#get_bool_from_env_var"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.get_bool_from_env_var" title="Permalink to this definition"></a></dt>
+<dd><p>Get bool value from env var.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.get_bukudb">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">get_bukudb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#get_bukudb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.get_bukudb" title="Permalink to this definition"></a></dt>
+<dd><p>get bukudb instance</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.get_custom_version">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">get_custom_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#get_custom_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.get_custom_version" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.get_tags">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#get_tags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.get_tags" title="Permalink to this definition"></a></dt>
+<dd><p>get tags.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.get_tiny_url">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">get_tiny_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#get_tiny_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.get_tiny_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.handle_network">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">handle_network</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#handle_network"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.handle_network" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.refresh_bookmark">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">refresh_bookmark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#refresh_bookmark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.refresh_bookmark" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.search_bookmarks">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">search_bookmarks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#search_bookmarks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.search_bookmarks" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.search_tag">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">search_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="buku.html#buku.BukuDb" title="buku.BukuDb"><span class="pre">buku.BukuDb</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">stag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/bukuserver/server.html#search_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.search_tag" title="Permalink to this definition"></a></dt>
+<dd><p>search tag.</p>
+<dl class="simple">
+<dt>db:</dt><dd><p>buku db instance</p>
+</dd>
+<dt>stag:</dt><dd><p>search tag</p>
+</dd>
+<dt>limit:</dt><dd><p>positive integer limit</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of unique tags sorted alphabetically and dictionary of tag and its usage count</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – if limit is not positive</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.server.update_tag">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.server.</span></span><span class="sig-name descname"><span class="pre">update_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/server.html#update_tag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.server.update_tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-bukuserver.views">
+<span id="bukuserver-views-module"></span><h2>bukuserver.views module<a class="headerlink" href="#module-bukuserver.views" title="Permalink to this headline"></a></h2>
+<p>views module.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">BookmarkModelView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_admin.model.base.BaseModelView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.action_view">
+<span class="sig-name descname"><span class="pre">action_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.action_view" title="Permalink to this definition"></a></dt>
+<dd><p>Mass-model action view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.ajax_lookup">
+<span class="sig-name descname"><span class="pre">ajax_lookup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.ajax_lookup" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.ajax_update">
+<span class="sig-name descname"><span class="pre">ajax_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.ajax_update" title="Permalink to this definition"></a></dt>
+<dd><p>Edits a single column of a record in list view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.can_set_page_size">
+<span class="sig-name descname"><span class="pre">can_set_page_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.can_set_page_size" title="Permalink to this definition"></a></dt>
+<dd><p>Allows to select page size via dropdown list</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.can_view_details">
+<span class="sig-name descname"><span class="pre">can_view_details</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.can_view_details" title="Permalink to this definition"></a></dt>
+<dd><p>Setting this to true will enable the details view. This is recommended
+when there are too many columns to display in the list_view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.column_filters">
+<span class="sig-name descname"><span class="pre">column_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['buku',</span> <span class="pre">'id',</span> <span class="pre">'url',</span> <span class="pre">'title',</span> <span class="pre">'tags']</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.column_filters" title="Permalink to this definition"></a></dt>
+<dd><p>Collection of the column filters.</p>
+<p>Can contain either field names or instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseFilter</span></code> classes.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_filters</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.column_formatters">
+<span class="sig-name descname"><span class="pre">column_formatters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Entry':</span> <span class="pre">&lt;function</span> <span class="pre">BookmarkModelView._list_entry&gt;}</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.column_formatters" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary of list view column formatters.</p>
+<p>For example, if you want to show price multiplied by
+two, you can do something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">price</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or using Jinja2 <cite>macro</cite> in template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask_admin.model.template</span> <span class="kn">import</span> <span class="n">macro</span>
+
+<span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="n">macro</span><span class="p">(</span><span class="s1">&#39;render_price&#39;</span><span class="p">))</span>
+
+<span class="c1"># in template</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">macro</span> <span class="n">render_price</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{{</span> <span class="n">model</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endmacro</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The Callback function has the prototype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">formatter</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="c1"># `view` is current administrative view</span>
+    <span class="c1"># `context` is instance of jinja2.runtime.Context</span>
+    <span class="c1"># `model` is model instance</span>
+    <span class="c1"># `name` is property name</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.column_list">
+<span class="sig-name descname"><span class="pre">column_list</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Entry']</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.column_list" title="Permalink to this definition"></a></dt>
+<dd><p>Collection of the model field names for the list view.
+If set to <cite>None</cite>, will get them from the model.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_list</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Added in 1.4.0) SQLAlchemy model attributes can be used instead of strings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_list</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">last_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>When using SQLAlchemy models, you can reference related columns like this::</dt><dd><dl class="simple">
+<dt>class MyModelView(BaseModelView):</dt><dd><p>column_list = (‘&lt;relationship&gt;.&lt;related column name&gt;’,)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_form">
+<span class="sig-name descname"><span class="pre">create_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.create_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_form" title="Permalink to this definition"></a></dt>
+<dd><p>Instantiate model creation form and return it.</p>
+<p>Override to implement custom behavior.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_modal">
+<span class="sig-name descname"><span class="pre">create_modal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_modal" title="Permalink to this definition"></a></dt>
+<dd><p>Setting this to true will display the create_view as a modal dialog.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_modal_template">
+<span class="sig-name descname"><span class="pre">create_modal_template</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bukuserver/bookmark_create_modal.html'</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_modal_template" title="Permalink to this definition"></a></dt>
+<dd><p>Default create modal template</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_model">
+<span class="sig-name descname"><span class="pre">create_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.create_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_model" title="Permalink to this definition"></a></dt>
+<dd><p>Create model from the form.</p>
+<p>Returns the model instance if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> – Form instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_template">
+<span class="sig-name descname"><span class="pre">create_template</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bukuserver/bookmark_create.html'</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_template" title="Permalink to this definition"></a></dt>
+<dd><p>Default create template</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.create_view">
+<span class="sig-name descname"><span class="pre">create_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.create_view" title="Permalink to this definition"></a></dt>
+<dd><p>Create model view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.delete_model">
+<span class="sig-name descname"><span class="pre">delete_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.delete_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.delete_model" title="Permalink to this definition"></a></dt>
+<dd><p>Delete model.</p>
+<p>Returns <cite>True</cite> if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> – Model instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.delete_view">
+<span class="sig-name descname"><span class="pre">delete_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.delete_view" title="Permalink to this definition"></a></dt>
+<dd><p>Delete model view. Only POST method is allowed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.details_modal">
+<span class="sig-name descname"><span class="pre">details_modal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.details_modal" title="Permalink to this definition"></a></dt>
+<dd><p>Setting this to true will display the details_view as a modal dialog.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.details_view">
+<span class="sig-name descname"><span class="pre">details_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.details_view" title="Permalink to this definition"></a></dt>
+<dd><p>Details model view</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.edit_modal">
+<span class="sig-name descname"><span class="pre">edit_modal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.edit_modal" title="Permalink to this definition"></a></dt>
+<dd><p>Setting this to true will display the edit_view as a modal dialog.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.edit_modal_template">
+<span class="sig-name descname"><span class="pre">edit_modal_template</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bukuserver/bookmark_edit_modal.html'</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.edit_modal_template" title="Permalink to this definition"></a></dt>
+<dd><p>Default edit modal template</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.edit_template">
+<span class="sig-name descname"><span class="pre">edit_template</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bukuserver/bookmark_edit.html'</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.edit_template" title="Permalink to this definition"></a></dt>
+<dd><p>Default edit template</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.edit_view">
+<span class="sig-name descname"><span class="pre">edit_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.edit_view" title="Permalink to this definition"></a></dt>
+<dd><p>Edit model view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.export" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.get_list">
+<span class="sig-name descname"><span class="pre">get_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_field</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_desc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.get_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.get_list" title="Permalink to this definition"></a></dt>
+<dd><p>Return a paginated and sorted list of models from the data source.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> – Page number, 0 based. Can be set to None if it is first page.</p></li>
+<li><p><strong>sort_field</strong> – Sort column name or None.</p></li>
+<li><p><strong>sort_desc</strong> – If set to True, sorting is in descending order.</p></li>
+<li><p><strong>search</strong> – Search query</p></li>
+<li><p><strong>filters</strong> – List of filter tuples. First value in a tuple is a search
+index, second value is a search value.</p></li>
+<li><p><strong>page_size</strong> – Number of results. Defaults to ModelView’s page_size. Can be
+overriden to change the page_size limit. Removing the page_size
+limit requires setting page_size to 0 or False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.get_one">
+<span class="sig-name descname"><span class="pre">get_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.get_one"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.get_one" title="Permalink to this definition"></a></dt>
+<dd><p>Return one model by its id.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – Model id</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.get_pk_value">
+<span class="sig-name descname"><span class="pre">get_pk_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.get_pk_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.get_pk_value" title="Permalink to this definition"></a></dt>
+<dd><p>Return PK value from a model object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.index_view">
+<span class="sig-name descname"><span class="pre">index_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.BookmarkModelView.index_view" title="Permalink to this definition"></a></dt>
+<dd><p>List view</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.named_filter_urls">
+<span class="sig-name descname"><span class="pre">named_filter_urls</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.BookmarkModelView.named_filter_urls" title="Permalink to this definition"></a></dt>
+<dd><p>Set to True to use human-readable names for filters in URL parameters.</p>
+<p>False by default so as to be robust across translations.</p>
+<p>Changing this parameter will break any existing URLs that have filters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.scaffold_filters">
+<span class="sig-name descname"><span class="pre">scaffold_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.scaffold_filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.scaffold_filters" title="Permalink to this definition"></a></dt>
+<dd><p>Generate filter object for the given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – Name of the field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.scaffold_form">
+<span class="sig-name descname"><span class="pre">scaffold_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.scaffold_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.scaffold_form" title="Permalink to this definition"></a></dt>
+<dd><p>Create <cite>form.BaseForm</cite> inherited class from the model. Must be
+implemented in the child class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.scaffold_list_columns">
+<span class="sig-name descname"><span class="pre">scaffold_list_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.scaffold_list_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.scaffold_list_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Return list of the model field names. Must be implemented in
+the child class.</p>
+<p>Expected return format is list of tuples with field name and
+display text. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.scaffold_list_form">
+<span class="sig-name descname"><span class="pre">scaffold_list_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.scaffold_list_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.scaffold_list_form" title="Permalink to this definition"></a></dt>
+<dd><p>Create form for the <cite>index_view</cite> using only the columns from
+<cite>self.column_editable_list</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> – WTForms widget class. Defaults to <cite>XEditableWidget</cite>.</p></li>
+<li><p><strong>validators</strong> – <cite>form_args</cite> dict with only validators
+{‘name’: {‘validators’: [DataRequired()]}}</p></li>
+</ul>
+</dd>
+</dl>
+<p>Must be implemented in the child class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.scaffold_sortable_columns">
+<span class="sig-name descname"><span class="pre">scaffold_sortable_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.scaffold_sortable_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.scaffold_sortable_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Returns dictionary of sortable columns. Must be implemented in
+the child class.</p>
+<p>Expected return format is a dictionary, where keys are field names and
+values are property names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.BookmarkModelView.update_model">
+<span class="sig-name descname"><span class="pre">update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#bukuserver.forms.BookmarkForm" title="bukuserver.forms.BookmarkForm"><span class="pre">bukuserver.forms.BookmarkForm</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#BookmarkModelView.update_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.BookmarkModelView.update_model" title="Permalink to this definition"></a></dt>
+<dd><p>Update model from the form.</p>
+<p>Returns <cite>True</cite> if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – Form instance</p></li>
+<li><p><strong>model</strong> – Model instance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.views.CustomAdminIndexView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">CustomAdminIndexView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'admin/index.html'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">menu_class_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">menu_icon_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">menu_icon_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#CustomAdminIndexView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.CustomAdminIndexView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_admin.base.AdminIndexView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.CustomAdminIndexView.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#CustomAdminIndexView.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.CustomAdminIndexView.index" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.CustomAdminIndexView.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#CustomAdminIndexView.search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.CustomAdminIndexView.search" title="Permalink to this definition"></a></dt>
+<dd><p>redirect to bookmark search</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.views.CustomBukuDbModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">CustomBukuDbModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bukudb_inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#CustomBukuDbModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.CustomBukuDbModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.views.StatisticView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">StatisticView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#StatisticView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.StatisticView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_admin.base.BaseView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.StatisticView.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#StatisticView.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.StatisticView.index" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">TagModelView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_admin.model.base.BaseModelView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.action_view">
+<span class="sig-name descname"><span class="pre">action_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.action_view" title="Permalink to this definition"></a></dt>
+<dd><p>Mass-model action view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.ajax_lookup">
+<span class="sig-name descname"><span class="pre">ajax_lookup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.ajax_lookup" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.ajax_update">
+<span class="sig-name descname"><span class="pre">ajax_update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.ajax_update" title="Permalink to this definition"></a></dt>
+<dd><p>Edits a single column of a record in list view.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.can_create">
+<span class="sig-name descname"><span class="pre">can_create</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#bukuserver.views.TagModelView.can_create" title="Permalink to this definition"></a></dt>
+<dd><p>Is model creation allowed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.can_set_page_size">
+<span class="sig-name descname"><span class="pre">can_set_page_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#bukuserver.views.TagModelView.can_set_page_size" title="Permalink to this definition"></a></dt>
+<dd><p>Allows to select page size via dropdown list</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.column_filters">
+<span class="sig-name descname"><span class="pre">column_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['name',</span> <span class="pre">'usage_count']</span></em><a class="headerlink" href="#bukuserver.views.TagModelView.column_filters" title="Permalink to this definition"></a></dt>
+<dd><p>Collection of the column filters.</p>
+<p>Can contain either field names or instances of <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseFilter</span></code> classes.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_filters</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.column_formatters">
+<span class="sig-name descname"><span class="pre">column_formatters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'name':</span> <span class="pre">&lt;function</span> <span class="pre">TagModelView._name_formatter&gt;}</span></em><a class="headerlink" href="#bukuserver.views.TagModelView.column_formatters" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary of list view column formatters.</p>
+<p>For example, if you want to show price multiplied by
+two, you can do something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="k">lambda</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">price</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or using Jinja2 <cite>macro</cite> in template:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask_admin.model.template</span> <span class="kn">import</span> <span class="n">macro</span>
+
+<span class="k">class</span> <span class="nc">MyModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">price</span><span class="o">=</span><span class="n">macro</span><span class="p">(</span><span class="s1">&#39;render_price&#39;</span><span class="p">))</span>
+
+<span class="c1"># in template</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">macro</span> <span class="n">render_price</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{{</span> <span class="n">model</span><span class="o">.</span><span class="n">price</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endmacro</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The Callback function has the prototype:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">formatter</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="c1"># `view` is current administrative view</span>
+    <span class="c1"># `context` is instance of jinja2.runtime.Context</span>
+    <span class="c1"># `model` is model instance</span>
+    <span class="c1"># `name` is property name</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.create_model">
+<span class="sig-name descname"><span class="pre">create_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.create_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.create_model" title="Permalink to this definition"></a></dt>
+<dd><p>Create model from the form.</p>
+<p>Returns the model instance if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>form</strong> – Form instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.create_view">
+<span class="sig-name descname"><span class="pre">create_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.create_view" title="Permalink to this definition"></a></dt>
+<dd><p>Create model view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.delete_model">
+<span class="sig-name descname"><span class="pre">delete_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.delete_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.delete_model" title="Permalink to this definition"></a></dt>
+<dd><p>Delete model.</p>
+<p>Returns <cite>True</cite> if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model</strong> – Model instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.delete_view">
+<span class="sig-name descname"><span class="pre">delete_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.delete_view" title="Permalink to this definition"></a></dt>
+<dd><p>Delete model view. Only POST method is allowed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.details_view">
+<span class="sig-name descname"><span class="pre">details_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.details_view" title="Permalink to this definition"></a></dt>
+<dd><p>Details model view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.edit_view">
+<span class="sig-name descname"><span class="pre">edit_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.edit_view" title="Permalink to this definition"></a></dt>
+<dd><p>Edit model view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.export" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.get_list">
+<span class="sig-name descname"><span class="pre">get_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_field</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_desc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">types.SimpleNamespace</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.get_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.get_list" title="Permalink to this definition"></a></dt>
+<dd><p>Return a paginated and sorted list of models from the data source.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>page</strong> – Page number, 0 based. Can be set to None if it is first page.</p></li>
+<li><p><strong>sort_field</strong> – Sort column name or None.</p></li>
+<li><p><strong>sort_desc</strong> – If set to True, sorting is in descending order.</p></li>
+<li><p><strong>search</strong> – Search query</p></li>
+<li><p><strong>filters</strong> – List of filter tuples. First value in a tuple is a search
+index, second value is a search value.</p></li>
+<li><p><strong>page_size</strong> – Number of results. Defaults to ModelView’s page_size. Can be
+overriden to change the page_size limit. Removing the page_size
+limit requires setting page_size to 0 or False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.get_one">
+<span class="sig-name descname"><span class="pre">get_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.get_one"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.get_one" title="Permalink to this definition"></a></dt>
+<dd><p>Return one model by its id.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> – Model id</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.get_pk_value">
+<span class="sig-name descname"><span class="pre">get_pk_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.get_pk_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.get_pk_value" title="Permalink to this definition"></a></dt>
+<dd><p>Return PK value from a model object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.index_view">
+<span class="sig-name descname"><span class="pre">index_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bukuserver.views.TagModelView.index_view" title="Permalink to this definition"></a></dt>
+<dd><p>List view</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.scaffold_filters">
+<span class="sig-name descname"><span class="pre">scaffold_filters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.scaffold_filters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.scaffold_filters" title="Permalink to this definition"></a></dt>
+<dd><p>Generate filter object for the given name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – Name of the field</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.scaffold_form">
+<span class="sig-name descname"><span class="pre">scaffold_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.scaffold_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.scaffold_form" title="Permalink to this definition"></a></dt>
+<dd><p>Create <cite>form.BaseForm</cite> inherited class from the model. Must be
+implemented in the child class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.scaffold_list_columns">
+<span class="sig-name descname"><span class="pre">scaffold_list_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.scaffold_list_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.scaffold_list_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Return list of the model field names. Must be implemented in
+the child class.</p>
+<p>Expected return format is list of tuples with field name and
+display text. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.scaffold_list_form">
+<span class="sig-name descname"><span class="pre">scaffold_list_form</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">widget</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.scaffold_list_form"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.scaffold_list_form" title="Permalink to this definition"></a></dt>
+<dd><p>Create form for the <cite>index_view</cite> using only the columns from
+<cite>self.column_editable_list</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>widget</strong> – WTForms widget class. Defaults to <cite>XEditableWidget</cite>.</p></li>
+<li><p><strong>validators</strong> – <cite>form_args</cite> dict with only validators
+{‘name’: {‘validators’: [DataRequired()]}}</p></li>
+</ul>
+</dd>
+</dl>
+<p>Must be implemented in the child class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.scaffold_sortable_columns">
+<span class="sig-name descname"><span class="pre">scaffold_sortable_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.scaffold_sortable_columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.scaffold_sortable_columns" title="Permalink to this definition"></a></dt>
+<dd><p>Returns dictionary of sortable columns. Must be implemented in
+the child class.</p>
+<p>Expected return format is a dictionary, where keys are field names and
+values are property names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bukuserver.views.TagModelView.update_model">
+<span class="sig-name descname"><span class="pre">update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">form</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#TagModelView.update_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.TagModelView.update_model" title="Permalink to this definition"></a></dt>
+<dd><p>Update model from the form.</p>
+<p>Returns <cite>True</cite> if operation succeeded.</p>
+<p>Must be implemented in the child class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>form</strong> – Form instance</p></li>
+<li><p><strong>model</strong> – Model instance</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bukuserver.views.chunks">
+<span class="sig-prename descclassname"><span class="pre">bukuserver.views.</span></span><span class="sig-name descname"><span class="pre">chunks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/bukuserver/views.html#chunks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#bukuserver.views.chunks" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="buku.html" class="btn btn-neutral float-left" title="buku module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

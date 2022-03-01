@@ -1,0 +1,13 @@
+```
+ ______            __                ____      ____  _   __        _   
+|_   _ \          [  |  _           |_  _|    |_  _|(_) [  |  _   (_)  
+  | |_) | __   _   | | / ] __   _     \ \  /\  / /  __   | | / ]  __   
+  |  __'.[  | | |  | '' < [  | | |     \ \/  \/ /  [  |  | '' <  [  |  
+ _| |__) || \_/ |, | |`\ \ | \_/ |,     \  /\  /    | |  | |`\ \  | |  
+|_______/ '.__.'_/[__|  \_]'.__.'_/      \/  \/    [___][__|  \_][___] 
+```
+
+
+This is the place to find internal details on how Buku works, GUI integration, how to use it as a library, how to run automated tests locally and much more... Buku v1.0 was released on 10 Nov 2015.
+
+Have fun!!! :)

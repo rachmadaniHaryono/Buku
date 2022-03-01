@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PR comment &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="Release-checklist.html" />
+    <link rel="prev" title="General" href="Operational-notes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>PR comment</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/wiki/PR-guidelines.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pr-comment">
+<h1>PR comment<a class="headerlink" href="#pr-comment" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Description</p>
+<ul>
+<li><p>Please provide an elaborate description of the problem you are trying to solve.</p></li>
+</ul>
+</li>
+<li><p>Design notes</p>
+<ul>
+<li><p>If this is a new feature, please provide design notes on the change which the next developer looking at the code might need to know.</p></li>
+</ul>
+</li>
+<li><p>Side effects</p>
+<ul>
+<li><p>Are you aware of any OS-specific deviations, side effects, unhandled scenarios etc.? Let us know.</p></li>
+</ul>
+</li>
+<li><p>Test cases</p>
+<ul>
+<li><p>Which scenarios have you tested already? A list of commands are welcome.</p></li>
+<li><p>You can use <a class="reference external" href="https://github.com/jarun/Buku/blob/master/tests/genbm.sh">genbm.sh</a> to automate bookmark generation for tests.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="program-help">
+<h1>Program help<a class="headerlink" href="#program-help" title="Permalink to this headline"></a></h1>
+<p>This is more important than your design or code! Users check this first.</p>
+<ul class="simple">
+<li><p>README.md</p>
+<ul>
+<li><p>New dependencies? Update them under <strong>Installation</strong>.</p></li>
+<li><p>New program option? Update program help under <strong>Cmdline options</strong> verbatim. The short description in help should be more or less aligned to other option descriptions.</p></li>
+<li><p>Add an example, if required under <strong>Examples</strong>.</p></li>
+<li><p>Update <strong>Operational notes</strong> if your change affects current behaviour, links to environment variables etc.</p></li>
+</ul>
+</li>
+<li><p>Man page</p>
+<ul>
+<li><p>Update program options.</p></li>
+<li><p>Add the same example, if you ave added one in README.md.</p></li>
+<li><p>Update <strong>Operational notes</strong>. However, new environment variables go under <strong>ENVIRONMENT</strong> section.</p></li>
+</ul>
+</li>
+<li><p>Completion scripts</p>
+<ul>
+<li><p>Add new program options to completion scripts for bash, fish and zsh.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="coding-guidelines">
+<h1>Coding guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p>Add new program options to a reasonable group.</p></li>
+<li><p><em>Single quote, single quote, single all the way!</em></p></li>
+<li><p>A single line should be less than 140 chars in length.</p></li>
+<li><p>No trailing whitespaces.</p></li>
+<li><p>Avoid append(), extend() and use concatenation if possible.</p></li>
+<li><p>Use string concatenation than substitution if possible, except (logger) prints.</p></li>
+<li><p>We have automated linting test but you can also test it by running <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">flake8</span> <span class="pre">buku.py</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pylint</span> <span class="pre">buku.py</span></code>.</p></li>
+<li><p>Add new API documentation, reasonable code comments.</p></li>
+<li><p>If possible, add test cases for your new API under <code class="docutils literal notranslate"><span class="pre">tests/</span></code>. We are Travis integrated.</p></li>
+<li><p>If possible, squash everything to a single commit.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Operational-notes.html" class="btn btn-neutral float-left" title="General" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Release-checklist.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

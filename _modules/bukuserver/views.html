@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bukuserver.views &mdash; buku  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> buku
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#features">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#usage">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#quickstart">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#examples">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#automation">Automation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#collaborators">Collaborators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#contributions">Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#related-projects">Related projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#videos">Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html#in-the-press">In the Press</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Wiki</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Customize-colors.html">Windows support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Installation-on-Termux.html">Install Buku on Termux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#tags">Tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#update">Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#delete">Delete</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#search">Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#import">Import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#encryption">Encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#editor">Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#proxy">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Operational-notes.html#alternative-db-file">Alternative DB file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html">PR comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#program-help">Program help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/PR-guidelines.html#coding-guidelines">Coding guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html">ToC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-bookmarks-with-a-web-service">Sync bookmarks with a web service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#set-the-preferred-editor">Set the preferred editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/System-integration.html#sync-database-across-systems">Sync database across systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html">Piped input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#fuzzy-search">Fuzzy search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Third-party-integration.html#cmder-integration-windows">cmder integration (Windows)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html">Buku 3.8 or newer with readme.md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wiki/Upload-to-pypi.html#buku-3-7-or-older-with-readme-rst">Buku 3.7 or older with readme.rst</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Buku Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../buku.html">buku</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Bukuserver Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../bukuserver.html">bukuserver</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">buku</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>bukuserver.views</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for bukuserver.views</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;views module.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">argparse</span> <span class="kn">import</span> <span class="n">Namespace</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">SimpleNamespace</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
+
+<span class="kn">import</span> <span class="nn">arrow</span>
+<span class="kn">import</span> <span class="nn">wtforms</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">url_for</span>
+<span class="kn">from</span> <span class="nn">flask_admin.babel</span> <span class="kn">import</span> <span class="n">gettext</span>
+<span class="kn">from</span> <span class="nn">flask_admin.base</span> <span class="kn">import</span> <span class="n">AdminIndexView</span><span class="p">,</span> <span class="n">BaseView</span><span class="p">,</span> <span class="n">expose</span>
+<span class="kn">from</span> <span class="nn">flask_admin.model</span> <span class="kn">import</span> <span class="n">BaseModelView</span>
+<span class="kn">from</span> <span class="nn">flask_wtf</span> <span class="kn">import</span> <span class="n">FlaskForm</span>
+<span class="kn">from</span> <span class="nn">markupsafe</span> <span class="kn">import</span> <span class="n">Markup</span>
+
+<span class="kn">import</span> <span class="nn">buku</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">filters</span> <span class="k">as</span> <span class="n">bs_filters</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">forms</span>
+    <span class="kn">from</span> <span class="nn">.filters</span> <span class="kn">import</span> <span class="n">BookmarkField</span><span class="p">,</span> <span class="n">FilterType</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">bukuserver</span> <span class="kn">import</span> <span class="n">filters</span> <span class="k">as</span> <span class="n">bs_filters</span>  <span class="c1"># type: ignore</span>
+    <span class="kn">from</span> <span class="nn">bukuserver</span> <span class="kn">import</span> <span class="n">forms</span>
+    <span class="kn">from</span> <span class="nn">bukuserver.filters</span> <span class="kn">import</span> <span class="n">BookmarkField</span><span class="p">,</span> <span class="n">FilterType</span>  <span class="c1"># type: ignore</span>
+
+
+<span class="n">STATISTIC_DATA</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">DEFAULT_URL_RENDER_MODE</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
+<span class="n">DEFAULT_PER_PAGE</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">LOG</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;bukuserver.views&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CustomAdminIndexView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.CustomAdminIndexView">[docs]</a><span class="k">class</span> <span class="nc">CustomAdminIndexView</span><span class="p">(</span><span class="n">AdminIndexView</span><span class="p">):</span>
+<div class="viewcode-block" id="CustomAdminIndexView.index"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.CustomAdminIndexView.index">[docs]</a>    <span class="nd">@expose</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;bukuserver/home.html&quot;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">HomeForm</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="CustomAdminIndexView.search"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.CustomAdminIndexView.search">[docs]</a>    <span class="nd">@expose</span><span class="p">(</span>
+        <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+        <span class="n">methods</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;redirect to bookmark search&quot;</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">HomeForm</span><span class="p">()</span>
+        <span class="n">bbm_filter</span> <span class="o">=</span> <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBukuFilter</span><span class="p">(</span>
+            <span class="n">all_keywords</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">deep</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">form</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">data</span>
+        <span class="p">)</span>
+        <span class="n">op_text</span> <span class="o">=</span> <span class="n">bbm_filter</span><span class="o">.</span><span class="n">operation</span><span class="p">()</span>
+        <span class="n">values_combi</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+        <span class="n">choosen_idx</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values_combi</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">deep</span> <span class="o">==</span> <span class="n">form</span><span class="o">.</span><span class="n">deep</span><span class="o">.</span><span class="n">data</span> <span class="ow">and</span> <span class="n">regex</span> <span class="o">==</span> <span class="n">form</span><span class="o">.</span><span class="n">regex</span><span class="o">.</span><span class="n">data</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">all_keywords</span><span class="p">:</span>
+                <span class="n">choosen_idx</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="n">url_op_text</span> <span class="o">=</span> <span class="n">op_text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;  &quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+        <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="n">choosen_idx</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;flt&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">choosen_idx</span><span class="p">),</span> <span class="s2">&quot;_buku_&quot;</span><span class="p">,</span> <span class="n">url_op_text</span><span class="p">])</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">form</span><span class="o">.</span><span class="n">keyword</span><span class="o">.</span><span class="n">data</span><span class="p">}</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;bookmark.index_view&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="CustomBukuDbModel"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.CustomBukuDbModel">[docs]</a><span class="k">class</span> <span class="nc">CustomBukuDbModel</span><span class="p">:</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bukudb_inst</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span> <span class="o">=</span> <span class="n">bukudb_inst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">__name__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span></div>
+
+
+<div class="viewcode-block" id="BookmarkModelView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView">[docs]</a><span class="k">class</span> <span class="nc">BookmarkModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_apply_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">filters</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">:</span>
+                <span class="n">flt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">clean_value</span> <span class="o">=</span> <span class="n">flt</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">models</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flt</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">clean_value</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">models</span>
+
+    <span class="k">def</span> <span class="nf">_create_ajax_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_list_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Namespace</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Markup</span><span class="p">:</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;context: </span><span class="si">%s</span><span class="s2">, name: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">parsed_url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">netloc</span> <span class="o">=</span> <span class="n">parsed_url</span><span class="o">.</span><span class="n">netloc</span>
+        <span class="n">tag_text</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">br_tag</span> <span class="o">=</span> <span class="s2">&quot;&lt;br/&gt;&quot;</span>
+        <span class="n">get_index_view_url</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">url_for</span><span class="p">,</span> <span class="s2">&quot;bookmark.index_view&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)):</span>
+            <span class="n">tag_text</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;&lt;a class=&quot;btn btn-default&quot; href=&quot;</span><span class="si">{</span><span class="n">get_index_view_url</span><span class="p">(</span><span class="n">flt2_tags_contain</span><span class="o">=</span><span class="n">tag</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">tag</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span>
+            <span class="p">)</span>
+        <span class="n">tag_text_markup</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tag_text</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">netloc</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">parsed_url</span><span class="o">.</span><span class="n">scheme</span><span class="p">:</span>
+            <span class="n">escaped_url</span> <span class="o">=</span> <span class="n">Markup</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">title</span><span class="si">}{</span><span class="n">br_tag</span><span class="si">}{</span><span class="n">escaped_url</span><span class="si">}{</span><span class="n">br_tag</span><span class="si">}{</span><span class="n">tag_text_markup</span><span class="si">}{</span><span class="n">model</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+            <span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BUKUSERVER_DISABLE_FAVICON&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="n">netloc</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;&lt;img src=&quot;http://www.google.com/s2/favicons?domain=</span><span class="si">{</span><span class="n">netloc</span><span class="si">}</span><span class="s1">&quot;/&gt;&#39;</span>
+            <span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">title</span> <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">title</span> <span class="k">else</span> <span class="s2">&quot;&amp;lt;EMPTY TITLE&amp;gt;&quot;</span>
+        <span class="n">open_in_new_tab</span> <span class="o">=</span> <span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;BUKUSERVER_OPEN_IN_NEW_TAB&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">url_for_index_view_netloc</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">netloc</span><span class="p">:</span>
+            <span class="n">url_for_index_view_netloc</span> <span class="o">=</span> <span class="n">get_index_view_url</span><span class="p">(</span><span class="n">flt2_url_netloc_match</span><span class="o">=</span><span class="n">netloc</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">parsed_url</span><span class="o">.</span><span class="n">scheme</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">open_in_new_tab</span><span class="p">:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;target=&quot;_blank&quot;&#39;</span> <span class="k">if</span> <span class="n">open_in_new_tab</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&quot;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">url_render_mode</span> <span class="o">==</span> <span class="s2">&quot;netloc&quot;</span> <span class="ow">and</span> <span class="n">url_for_index_view_netloc</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(&lt;a href=&quot;</span><span class="si">{</span><span class="n">url_for_index_view_netloc</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">netloc</span><span class="si">}</span><span class="s1">&lt;/a&gt;)&#39;</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">br_tag</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">parsed_url</span><span class="o">.</span><span class="n">scheme</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">br_tag</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">url_render_mode</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">url_render_mode</span> <span class="o">==</span> <span class="s2">&quot;full&quot;</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="sa">f</span><span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&quot;&gt;</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span><span class="p">,</span> <span class="n">br_tag</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">url_render_mode</span> <span class="o">!=</span> <span class="s2">&quot;netloc&quot;</span> <span class="ow">and</span> <span class="n">url_for_index_view_netloc</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">&#39;&lt;a class=&quot;btn btn-default&quot; href=&quot;</span><span class="si">{</span><span class="n">url_for_index_view_netloc</span><span class="si">}</span><span class="s1">&quot;&gt;netloc:</span><span class="si">{</span><span class="n">netloc</span><span class="si">}</span><span class="s1">&lt;/a&gt;&#39;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">tag_text_markup</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tag_text</span><span class="p">))</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">description</span>
+        <span class="k">if</span> <span class="n">description</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">br_tag</span><span class="p">,</span> <span class="n">description</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">br_tag</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+
+    <span class="n">can_set_page_size</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">can_view_details</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">column_filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;buku&quot;</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="p">]</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Entry&quot;</span><span class="p">:</span> <span class="n">_list_entry</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">column_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Entry&quot;</span><span class="p">]</span>
+    <span class="n">create_modal</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">create_modal_template</span> <span class="o">=</span> <span class="s2">&quot;bukuserver/bookmark_create_modal.html&quot;</span>
+    <span class="n">create_template</span> <span class="o">=</span> <span class="s2">&quot;bukuserver/bookmark_create.html&quot;</span>
+    <span class="n">details_modal</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">edit_modal</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">edit_modal_template</span> <span class="o">=</span> <span class="s2">&quot;bukuserver/bookmark_edit_modal.html&quot;</span>
+    <span class="n">edit_template</span> <span class="o">=</span> <span class="s2">&quot;bukuserver/bookmark_edit.html&quot;</span>
+    <span class="n">named_filter_urls</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="p">:</span> <span class="n">buku</span><span class="o">.</span><span class="n">BukuDb</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">custom_model</span> <span class="o">=</span> <span class="n">CustomBukuDbModel</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;bookmark&quot;</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">custom_model</span><span class="p">,</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page_size</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;page_size&quot;</span><span class="p">,</span> <span class="n">DEFAULT_PER_PAGE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url_render_mode</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;url_render_mode&quot;</span><span class="p">,</span> <span class="n">DEFAULT_URL_RENDER_MODE</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="BookmarkModelView.create_form"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.create_form">[docs]</a>    <span class="k">def</span> <span class="nf">create_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">create_form</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span>
+        <span class="n">args_url</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">args_url</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">args_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/bookmark/&quot;</span><span class="p">):</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">args_url</span>
+        <span class="k">if</span> <span class="s2">&quot;title&quot;</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;description&quot;</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">form</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.create_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.create_model">[docs]</a>    <span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">populate_obj</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="nb">vars</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_on_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;url invalid: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="p">}</span>
+            <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;tags_in&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">buku</span><span class="o">.</span><span class="n">parse_tags</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">tags</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">&quot;title_in&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">title</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">description</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">add_rec</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_view_exception</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to create record.&quot;</span>
+                <span class="n">flash</span><span class="p">(</span>
+                    <span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(msg)s</span><span class="s2"> </span><span class="si">%(error)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)),</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">after_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">model</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.delete_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.delete_model">[docs]</a>    <span class="k">def</span> <span class="nf">delete_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">on_model_delete</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">delete_rec</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_view_exception</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to delete record.&quot;</span>
+                <span class="n">flash</span><span class="p">(</span>
+                    <span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(msg)s</span><span class="s2"> </span><span class="si">%(error)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)),</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">after_model_delete</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.get_list"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.get_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">page</span><span class="p">,</span> <span class="n">sort_field</span><span class="p">,</span> <span class="n">sort_desc</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">page_size</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span>
+        <span class="n">contain_buku_search</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;buku&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contain_buku_search</span><span class="p">:</span>
+            <span class="n">mode_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">mode_id</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">flash</span><span class="p">(</span><span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;Invalid search mode combination&quot;</span><span class="p">),</span> <span class="s2">&quot;error&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[]</span>
+            <span class="n">keywords</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">]</span>
+            <span class="n">flt</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">flt_name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">flt_name</span> <span class="o">==</span> <span class="s2">&quot;buku&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">:</span>
+                    <span class="n">flt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+            <span class="n">kwargs</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">dict</span><span class="p">(</span><span class="n">all_keywords</span><span class="o">=</span><span class="n">flt</span><span class="o">.</span><span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">flt</span><span class="o">.</span><span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">flt</span><span class="o">.</span><span class="n">regex</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">flt</span>
+                <span class="k">else</span> <span class="p">{}</span>
+            <span class="p">)</span>
+            <span class="n">bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">searchdb</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_all</span><span class="p">()</span>
+        <span class="n">bookmarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_filters</span><span class="p">(</span><span class="n">bookmarks</span><span class="p">,</span> <span class="n">filters</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sort_field</span><span class="p">:</span>
+            <span class="n">key_idx</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">BookmarkField</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">sort_field</span><span class="p">][</span>
+                <span class="mi">0</span>
+            <span class="p">]</span>
+            <span class="n">bookmarks</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">bookmarks</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">key_idx</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="n">sort_desc</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">bookmarks</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">page_size</span> <span class="ow">and</span> <span class="n">bookmarks</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">bookmarks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">(</span><span class="n">bookmarks</span><span class="p">,</span> <span class="n">page_size</span><span class="p">))[</span><span class="n">page</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                <span class="n">bookmarks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">bookmark</span> <span class="ow">in</span> <span class="n">bookmarks</span><span class="p">:</span>
+            <span class="n">bm_sns</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span>
+                <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">BookmarkField</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">field</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">TAGS</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">bookmark</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                    <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">bm_sns</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">setattr</span><span class="p">(</span><span class="n">bm_sns</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">bookmark</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bm_sns</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">,</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.get_one"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.get_one">[docs]</a>    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="n">bookmark</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_by_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="n">bm_sns</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">BookmarkField</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">field</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">TAGS</span> <span class="ow">and</span> <span class="n">bookmark</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">bookmark</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+                <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">bm_sns</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">bm_sns</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">bookmark</span><span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">bm_sns</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.get_pk_value"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.get_pk_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_pk_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">id</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.scaffold_list_columns"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.scaffold_list_columns">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_list_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">BookmarkField</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.scaffold_list_form"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.scaffold_list_form">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_list_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.scaffold_sortable_columns"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.scaffold_sortable_columns">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_sortable_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaffold_list_columns</span><span class="p">()}</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.scaffold_filters"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.scaffold_filters">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;buku&quot;</span><span class="p">:</span>
+            <span class="n">values_combi</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="p">,</span> <span class="n">regex</span> <span class="ow">in</span> <span class="n">values_combi</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBukuFilter</span><span class="p">(</span>
+                        <span class="n">all_keywords</span><span class="o">=</span><span class="n">all_keywords</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="n">regex</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">ID</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_EQUAL</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">IN_LIST</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_IN_LIST</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">GREATER</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">SMALLER</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">TOP_X</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">BOTTOM_X</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">URL</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+
+            <span class="k">def</span> <span class="nf">netloc_match_func</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+                <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">])</span><span class="o">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="n">value</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;netloc match&quot;</span><span class="p">,</span> <span class="n">netloc_match_func</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_EQUAL</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">IN_LIST</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_IN_LIST</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">TITLE</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_EQUAL</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">IN_LIST</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_IN_LIST</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="n">BookmarkField</span><span class="o">.</span><span class="n">TAGS</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+
+            <span class="k">def</span> <span class="nf">tags_contain_func</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">tag</span> <span class="ow">and</span> <span class="n">tag</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+                            <span class="k">yield</span> <span class="n">item</span>
+
+            <span class="k">def</span> <span class="nf">tags_not_contain_func</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">item</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">tag</span> <span class="ow">and</span> <span class="n">tag</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
+                            <span class="k">yield</span> <span class="n">item</span>
+
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;contain&quot;</span><span class="p">,</span> <span class="n">tags_contain_func</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;not contain&quot;</span><span class="p">,</span> <span class="n">tags_not_contain_func</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkTagNumberEqualFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;number equal&quot;</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkTagNumberNotEqualFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;number not equal&quot;</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkTagNumberGreaterFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;number greater than&quot;</span>
+                    <span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">BookmarkTagNumberSmallerFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;number smaller than&quot;</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaffold_list_columns</span><span class="p">():</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">scaffold_filters</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.scaffold_form"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.scaffold_form">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">BookmarkForm</span>
+        <span class="k">return</span> <span class="bp">cls</span></div>
+
+<div class="viewcode-block" id="BookmarkModelView.update_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.BookmarkModelView.update_model">[docs]</a>    <span class="k">def</span> <span class="nf">update_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">:</span> <span class="n">forms</span><span class="o">.</span><span class="n">BookmarkForm</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">Namespace</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">populate_obj</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_on_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">update_rec</span><span class="p">(</span>
+                <span class="n">model</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="n">title_in</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+                <span class="n">tags_in</span><span class="o">=</span><span class="n">buku</span><span class="o">.</span><span class="n">parse_tags</span><span class="p">([</span><span class="n">model</span><span class="o">.</span><span class="n">tags</span><span class="p">]),</span>
+                <span class="n">desc</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_view_exception</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to update record.&quot;</span>
+                <span class="n">flash</span><span class="p">(</span>
+                    <span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(msg)s</span><span class="s2"> </span><span class="si">%(error)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)),</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">after_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="TagModelView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView">[docs]</a><span class="k">class</span> <span class="nc">TagModelView</span><span class="p">(</span><span class="n">BaseModelView</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_create_ajax_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_apply_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">models</span><span class="p">,</span> <span class="n">filters</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">:</span>
+                <span class="n">flt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filters</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="n">clean_value</span> <span class="o">=</span> <span class="n">flt</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">models</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">flt</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">clean_value</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">models</span>
+
+    <span class="k">def</span> <span class="nf">_name_formatter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span>
+                <span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{}</span><span class="s1">&quot;&gt;</span><span class="si">{}</span><span class="s1">&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;bookmark.index_view&quot;</span><span class="p">,</span> <span class="n">flt2_tags_number_equal</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+                    <span class="s2">&quot;&amp;lt;EMPTY TAG&amp;gt;&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">Markup</span><span class="p">(</span>
+            <span class="s1">&#39;&lt;a href=&quot;</span><span class="si">{}</span><span class="s1">&quot;&gt;</span><span class="si">{}</span><span class="s1">&lt;/a&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;bookmark.index_view&quot;</span><span class="p">,</span> <span class="n">flt1_tags_contain</span><span class="o">=</span><span class="n">data</span><span class="p">),</span> <span class="n">data</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="n">can_create</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">can_set_page_size</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">column_filters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;usage_count&quot;</span><span class="p">]</span>
+    <span class="n">column_formatters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">_name_formatter</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">custom_model</span> <span class="o">=</span> <span class="n">CustomBukuDbModel</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;tag&quot;</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">custom_model</span><span class="p">,</span>
+        <span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">page_size</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;page_size&quot;</span><span class="p">,</span> <span class="n">DEFAULT_PER_PAGE</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="TagModelView.scaffold_list_columns"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.scaffold_list_columns">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_list_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;usage_count&quot;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="TagModelView.scaffold_sortable_columns"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.scaffold_sortable_columns">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_sortable_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">scaffold_list_columns</span><span class="p">()}</span></div>
+
+<div class="viewcode-block" id="TagModelView.scaffold_form"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.scaffold_form">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">class</span> <span class="nc">CustomForm</span><span class="p">(</span><span class="n">FlaskForm</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">wtforms</span><span class="o">.</span><span class="n">StringField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">wtforms</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">DataRequired</span><span class="p">()])</span>
+
+        <span class="k">return</span> <span class="n">CustomForm</span></div>
+
+<div class="viewcode-block" id="TagModelView.scaffold_list_form"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.scaffold_list_form">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_list_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">validators</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="TagModelView.get_list"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.get_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_list</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">page</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">sort_field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">sort_desc</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+        <span class="n">search</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="n">filters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+        <span class="n">page_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SimpleNamespace</span><span class="p">]]:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;search: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">search</span><span class="p">)</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_tag_all</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tags</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_filters</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="n">filters</span><span class="p">)</span>
+        <span class="n">sort_field_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;usage_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">sort_field</span> <span class="ow">in</span> <span class="n">sort_field_dict</span><span class="p">:</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="nb">sorted</span><span class="p">(</span>
+                    <span class="n">tags</span><span class="p">,</span>
+                    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">sort_field_dict</span><span class="p">[</span><span class="n">sort_field</span><span class="p">]],</span>
+                    <span class="n">reverse</span><span class="o">=</span><span class="n">sort_desc</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">page_size</span> <span class="ow">and</span> <span class="n">tags</span><span class="p">:</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="n">page_size</span><span class="p">))[</span><span class="n">page</span><span class="p">]</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">usage_count</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+            <span class="n">tag_sns</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usage_count</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+            <span class="n">tag_sns</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tag_sns</span><span class="o">.</span><span class="n">usage_count</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">usage_count</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag_sns</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">,</span> <span class="n">data</span></div>
+
+<div class="viewcode-block" id="TagModelView.get_pk_value"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.get_pk_value">[docs]</a>    <span class="k">def</span> <span class="nf">get_pk_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">model</span><span class="o">.</span><span class="n">name</span></div>
+
+<div class="viewcode-block" id="TagModelView.get_one"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.get_one">[docs]</a>    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="n">tags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">get_tag_all</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">tag_sns</span> <span class="o">=</span> <span class="n">SimpleNamespace</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">usage_count</span><span class="o">=</span><span class="n">tags</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">tag_sns</span></div>
+
+<div class="viewcode-block" id="TagModelView.scaffold_filters"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.scaffold_filters">[docs]</a>    <span class="k">def</span> <span class="nf">scaffold_filters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span> <span class="nf">top_most_common_func</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+            <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">query</span><span class="p">)</span>
+            <span class="n">most_common</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">most_common_item</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">most_common</span><span class="p">]</span>
+            <span class="k">return</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">in</span> <span class="n">most_common_item</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+
+        <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">),</span>
+                <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_EQUAL</span><span class="p">),</span>
+                <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">IN_LIST</span><span class="p">),</span>
+                <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">NOT_IN_LIST</span><span class="p">),</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;usage_count&quot;</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">GREATER</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">SMALLER</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">TOP_X</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">filter_type</span><span class="o">=</span><span class="n">FilterType</span><span class="o">.</span><span class="n">BOTTOM_X</span><span class="p">),</span>
+                    <span class="n">bs_filters</span><span class="o">.</span><span class="n">TagBaseFilter</span><span class="p">(</span>
+                        <span class="n">name</span><span class="p">,</span> <span class="s2">&quot;top most common&quot;</span><span class="p">,</span> <span class="n">top_most_common_func</span>
+                    <span class="p">),</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">scaffold_filters</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="TagModelView.delete_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.delete_model">[docs]</a>    <span class="k">def</span> <span class="nf">delete_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">on_model_delete</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">delete_tag_at_index</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">chatty</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_view_exception</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to delete record.&quot;</span>
+                <span class="n">flash</span><span class="p">(</span>
+                    <span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(msg)s</span><span class="s2"> </span><span class="si">%(error)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)),</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">after_model_delete</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="TagModelView.update_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.update_model">[docs]</a>    <span class="k">def</span> <span class="nf">update_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">original_name</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">form</span><span class="o">.</span><span class="n">populate_obj</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_on_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span><span class="o">.</span><span class="n">replace_tag</span><span class="p">(</span><span class="n">original_name</span><span class="p">,</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">handle_view_exception</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Failed to update record.&quot;</span>
+                <span class="n">flash</span><span class="p">(</span>
+                    <span class="n">gettext</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%(msg)s</span><span class="s2"> </span><span class="si">%(error)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)),</span>
+                    <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">LOG</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">after_model_change</span><span class="p">(</span><span class="n">form</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="TagModelView.create_model"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.TagModelView.create_model">[docs]</a>    <span class="k">def</span> <span class="nf">create_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+        <span class="k">pass</span></div></div>
+
+
+<div class="viewcode-block" id="StatisticView"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.StatisticView">[docs]</a><span class="k">class</span> <span class="nc">StatisticView</span><span class="p">(</span><span class="n">BaseView</span><span class="p">):</span>  <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="StatisticView.index"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.StatisticView.index">[docs]</a>    <span class="nd">@expose</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">bukudb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bukudb</span>
+        <span class="k">global</span> <span class="n">STATISTIC_DATA</span>
+        <span class="n">statistic_data</span> <span class="o">=</span> <span class="n">STATISTIC_DATA</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">statistic_data</span> <span class="ow">or</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+            <span class="n">all_bookmarks</span> <span class="o">=</span> <span class="n">bukudb</span><span class="o">.</span><span class="n">get_rec_all</span><span class="p">()</span>
+            <span class="n">netloc</span> <span class="o">=</span> <span class="p">[</span><span class="n">urlparse</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">netloc</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_bookmarks</span><span class="p">]</span>
+            <span class="n">tag_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_bookmarks</span><span class="p">]</span>
+            <span class="n">tag_items</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">tags</span> <span class="ow">in</span> <span class="n">tag_set</span><span class="p">:</span>
+                <span class="n">tag_items</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tags</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()])</span>
+            <span class="n">tag_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">tag_items</span><span class="p">)</span>
+            <span class="n">title_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_bookmarks</span><span class="p">]</span>
+            <span class="n">title_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">title_items</span><span class="p">)</span>
+            <span class="n">statistic_datetime</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+            <span class="n">STATISTIC_DATA</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;datetime&quot;</span><span class="p">:</span> <span class="n">statistic_datetime</span><span class="p">,</span>
+                <span class="s2">&quot;netloc&quot;</span><span class="p">:</span> <span class="n">netloc</span><span class="p">,</span>
+                <span class="s2">&quot;tag_counter&quot;</span><span class="p">:</span> <span class="n">tag_counter</span><span class="p">,</span>
+                <span class="s2">&quot;title_counter&quot;</span><span class="p">:</span> <span class="n">title_counter</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">netloc</span> <span class="o">=</span> <span class="n">statistic_data</span><span class="p">[</span><span class="s2">&quot;netloc&quot;</span><span class="p">]</span>
+            <span class="n">statistic_datetime</span> <span class="o">=</span> <span class="n">statistic_data</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span>
+            <span class="n">tag_counter</span> <span class="o">=</span> <span class="n">statistic_data</span><span class="p">[</span><span class="s2">&quot;tag_counter&quot;</span><span class="p">]</span>
+            <span class="n">title_counter</span> <span class="o">=</span> <span class="n">statistic_data</span><span class="p">[</span><span class="s2">&quot;title_counter&quot;</span><span class="p">]</span>
+
+        <span class="n">netloc_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">netloc</span><span class="p">)</span>
+        <span class="n">unique_netloc_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">netloc</span><span class="p">))</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;#F7464A&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#46BFBD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#FDB45C&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#FEDCBA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#ABCDEF&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#DDDDDD&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#ABCABC&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#4169E1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#C71585&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#FF4500&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#FEDCBA&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#46BFBD&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="n">show_netloc_table</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">unique_netloc_len</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+            <span class="n">max_netloc_item</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">netloc_colors</span> <span class="o">=</span> <span class="n">colors</span>
+            <span class="n">show_netloc_table</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">netloc_colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[:</span><span class="n">unique_netloc_len</span><span class="p">]</span>
+            <span class="n">max_netloc_item</span> <span class="o">=</span> <span class="n">unique_netloc_len</span>
+        <span class="n">most_common_netlocs</span> <span class="o">=</span> <span class="n">netloc_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">max_netloc_item</span><span class="p">)</span>
+        <span class="n">most_common_netlocs</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">netloc_colors</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">most_common_netlocs</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">unique_tag_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tag_counter</span><span class="p">)</span>
+        <span class="n">show_tag_rank_table</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">unique_tag_len</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+            <span class="n">max_tag_item</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">tag_colors</span> <span class="o">=</span> <span class="n">colors</span>
+            <span class="n">show_tag_rank_table</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">tag_colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[:</span><span class="n">unique_tag_len</span><span class="p">]</span>
+            <span class="n">max_tag_item</span> <span class="o">=</span> <span class="n">unique_tag_len</span>
+        <span class="n">most_common_tags</span> <span class="o">=</span> <span class="n">tag_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">max_tag_item</span><span class="p">)</span>
+        <span class="n">most_common_tags</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tag_colors</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">most_common_tags</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="n">unique_title_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">title_counter</span><span class="p">)</span>
+        <span class="n">show_title_rank_table</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">unique_title_len</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">):</span>
+            <span class="n">max_title_item</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">title_colors</span> <span class="o">=</span> <span class="n">colors</span>
+            <span class="n">show_title_rank_table</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">title_colors</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[:</span><span class="n">unique_title_len</span><span class="p">]</span>
+            <span class="n">max_title_item</span> <span class="o">=</span> <span class="n">unique_title_len</span>
+        <span class="n">most_common_titles</span> <span class="o">=</span> <span class="n">title_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">max_title_item</span><span class="p">)</span>
+        <span class="n">most_common_titles</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">title_colors</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">most_common_titles</span><span class="p">)</span>
+        <span class="p">]</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">(</span>
+            <span class="s2">&quot;bukuserver/statistic.html&quot;</span><span class="p">,</span>
+            <span class="n">most_common_netlocs</span><span class="o">=</span><span class="n">most_common_netlocs</span><span class="p">,</span>
+            <span class="n">netloc_counter</span><span class="o">=</span><span class="n">netloc_counter</span><span class="p">,</span>
+            <span class="n">show_netloc_table</span><span class="o">=</span><span class="n">show_netloc_table</span><span class="p">,</span>
+            <span class="n">most_common_tags</span><span class="o">=</span><span class="n">most_common_tags</span><span class="p">,</span>
+            <span class="n">tag_counter</span><span class="o">=</span><span class="n">tag_counter</span><span class="p">,</span>
+            <span class="n">show_tag_rank_table</span><span class="o">=</span><span class="n">show_tag_rank_table</span><span class="p">,</span>
+            <span class="n">most_common_titles</span><span class="o">=</span><span class="n">most_common_titles</span><span class="p">,</span>
+            <span class="n">title_counter</span><span class="o">=</span><span class="n">title_counter</span><span class="p">,</span>
+            <span class="n">show_title_rank_table</span><span class="o">=</span><span class="n">show_title_rank_table</span><span class="p">,</span>
+            <span class="n">datetime</span><span class="o">=</span><span class="n">statistic_datetime</span><span class="p">,</span>
+            <span class="n">datetime_text</span><span class="o">=</span><span class="n">statistic_datetime</span><span class="o">.</span><span class="n">humanize</span><span class="p">(</span>
+                <span class="n">arrow</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span> <span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;second&quot;</span>
+            <span class="p">),</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="chunks"><a class="viewcode-back" href="../../bukuserver.html#bukuserver.views.chunks">[docs]</a><span class="k">def</span> <span class="nf">chunks</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="n">n</span><span class="p">))</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Arun Prakash Jana.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
