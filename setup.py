@@ -34,31 +34,21 @@ tests_require = [
 
 
 server_require = [
-    "appdirs>=1.4.3",
-    "arrow>=0.12.1",
-    "beautifulsoup4>=4.5.3",
-    "cffi>=1.9.1",
-    "click>=6.7",
-    "Flask-Admin>=1.5.1",
-    "Flask-API>=0.6.9",
+    "arrow>=1.2.2",
+    "Flask-Admin>=1.6.0",
+    "Flask-API>=3.0.post1",
     "Flask-Bootstrap>=3.3.7.1",
-    "flask-paginate>=0.5.1",
-    "flask-reverse-proxy-fix @ https://github.com/rachmadaniHaryono/flask-reverse-proxy-fix/archive/refs/tags/v0.2.2rc1.zip",
-    "Flask-WTF>=0.14.2",
-    "Flask>=1.0.2,<2.0",
-    "idna>=2.5",
-    "itsdangerous>=0.24",
-    "Jinja2>=2.10.1",
-    "markupsafe==2.0.1",
-    "packaging>=16.8",
-    "pyasn1>=0.2.3",
-    "pycparser>=2.17",
-    "requests>=2.21.0",
-    "six>=1.10.0",
-    "urllib3>=1.25.2",
-    "Werkzeug>=0.11.15",
-    "wtforms>=3.0.0a1",
+    "flask-paginate>=2022.1.8",
+    "Flask-WTF>=1.0.1",
+    "Flask>=2.2.2",
 ]
+reverse_proxy = " ".join(
+    [
+        "flask-reverse-proxy-fix",
+        "@",
+        "https://github.com/rachmadaniHaryono/flask-reverse-proxy-fix/archive/refs/tags/v0.2.2rc1.zip",
+    ]
+)
 
 setup(
     name='buku',
@@ -66,13 +56,13 @@ setup(
     description='Bookmark manager like a text-based mini-web.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author='Arun Prakash Jana',
-    author_email='engineerarun@gmail.com',
-    url='https://github.com/jarun/buku',
-    license='GPLv3',
-    python_requires='>=3.6',  # requires pip>=9.0.0
-    platforms=['any'],
-    py_modules=['buku'],
+    author="Arun Prakash Jana",
+    author_email="engineerarun@gmail.com",
+    url="https://github.com/jarun/buku",
+    license="GPLv3",
+    python_requires=">=3.7",  # requires pip>=9.0.0
+    platforms=["any"],
+    py_modules=["buku"],
     install_requires=[
         'beautifulsoup4>=4.4.1',
         'cryptography>=1.2.3',
@@ -86,8 +76,9 @@ setup(
     },
     extras_require={
         "ca-certificates": ["certifi"],
-        "tests": tests_require + server_require,
+        "tests": tests_require + server_require + [reverse_proxy],
         "server": server_require,
+        "reverse_proxy": [reverse_proxy],
         "docs": [
             "myst-parser>=0.17.0",
             "sphinx-rtd-theme>=1.0.0",
@@ -99,19 +90,20 @@ setup(
     tests_require=tests_require,
     keywords='cli bookmarks tag utility',
     classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Environment :: Console',
-        'Intended Audience :: Developers',
-        'Intended Audience :: End Users/Desktop',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Natural Language :: English',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Topic :: Internet :: WWW/HTTP :: Indexing/Search',
-        'Topic :: Utilities'
-    ]
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Intended Audience :: End Users/Desktop",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+        "Topic :: Utilities",
+    ],
 )

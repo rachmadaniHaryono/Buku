@@ -26,7 +26,7 @@ When I started writing it, I couldn't find a flexible command-line solution with
 
 `buku` can import bookmarks from browser(s) or fetch the title, tags and description of a URL from the web. Use your favourite editor to add, compose and update bookmarks. Search bookmarks instantly with multiple search options, including regex and a deep scan mode (handy with URLs).
 
-It can look up broken links on Wayback Machine. There's an Easter Egg to revisit random bookmarks.
+It can look up broken links on the Wayback Machine. There's an Easter Egg to revisit random bookmarks.
 
 There's no tracking, hidden history, obsolete records, usage analytics or homing.
 
@@ -60,17 +60,19 @@ To get started right away, jump to the [Quickstart](#quickstart) section. `buku`
 ### Features
 
 - Store bookmarks with auto-fetched title, tags and description
-- Auto-import from Firefox, Google Chrome and Chromium
+- Auto-import from Firefox, Google Chrome, Chromium and MS Edge
 - Open bookmarks and search results in browser
-- Shorten, expand URLs, browse cached page from Wayback Machine
+- Shorten, expand URLs
+- Browse cached page from the Wayback Machine
 - Text editor integration
 - Lightweight, clean interface, custom colors
 - Powerful search options (regex, substring...)
 - Continuous search with on the fly mode switch
 - Portable, merge-able database to sync between systems
-- Import/export bookmarks from/to HTML, Markdown or Orgfile
+- Import/export bookmarks from/to HTML, XBEL, Markdown or Orgfile
 - Smart tag management using redirection (>>, >, <<)
-- Multi-threaded full DB refresh, manual encryption support
+- Multi-threaded full DB refresh
+- Manual encryption support
 - Shell completion scripts, man page with examples
 - Privacy-aware (no unconfirmed user data collection)
 
@@ -80,7 +82,7 @@ To get started right away, jump to the [Quickstart](#quickstart) section. `buku`
 
 | Feature | Dependency |
 | --- | --- |
-| Lang, SQLite | Python 3.6+ |
+| Lang, SQLite | Python 3.7+ |
 | HTTPS | certifi, urllib3 |
 | Encryption | cryptography |
 | HTML | beautifulsoup4, html5lib |
@@ -211,16 +213,18 @@ ENCRYPTION OPTIONS:
       -k, --unlock [N]     decrypt DB in N (default 8) # iterations
 
 POWER TOYS:
-      --ai                 auto-import from Firefox/Chrome/Chromium
+      --ai                 auto-import bookmarks from web browsers
+                           Firefox, Chrome, Chromium, Edge
       -e, --export file    export bookmarks to Firefox format HTML
+                           export XBEL, if file ends with '.xbel'
                            export Markdown, if file ends with '.md'
                            format: [title](url) <!-- TAGS -->
                            export Orgfile, if file ends with '.org'
                            format: *[[url][title]] :tags:
                            export buku DB, if file ends with '.db'
                            combines with search results, if opted
-      -i, --import file    import bookmarks based on file extension
-                           supports 'html', 'json', 'md', 'org', 'db'
+      -i, --import file    import bookmarks from file
+                           supports .html .xbel .json .md .org .db
       -p, --print [...]    show record details by indices, ranges
                            print all bookmarks, if no arguments
                            -n shows the last n results (like tail)
@@ -355,16 +359,18 @@ PROMPT KEYS:
 
        $ buku -u 15012014 -c this is a new comment
     Applies to --url, --title and --tag too.
-9. **Export** bookmarks tagged `tag 1` or `tag 2` to HTML, Markdown, Orgfile or a new database:
+9. **Export** bookmarks tagged `tag 1` or `tag 2` to HTML, XBEL, Markdown, Orgfile or a new database:
 
        $ buku -e bookmarks.html --stag tag 1, tag 2
+       $ buku -e bookmarks.xbel --stag tag 1, tag 2
        $ buku -e bookmarks.md --stag tag 1, tag 2
        $ buku -e bookmarks.org --stag tag 1, tag 2
        $ buku -e bookmarks.db --stag tag 1, tag 2
     All bookmarks are exported if search is not opted.
-10. **Import** bookmarks from HTML, Markdown or Orgfile:
+10. **Import** bookmarks from HTML, XBEL, Markdown or Orgfile:
 
         $ buku -i bookmarks.html
+        $ buku -i bookmarks.xbel
         $ buku -i bookmarks.md
         $ buku -i bookmarks.org
         $ buku -i bookmarks.db
